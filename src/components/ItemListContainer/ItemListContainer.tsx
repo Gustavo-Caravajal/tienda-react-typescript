@@ -1,3 +1,4 @@
+import './ItemListContainer.css'
 import { ItemList } from "../ItemList/ItemList"
 import { useProductsContext } from "../../context/ProductsContext/useProductsContext"
 
@@ -11,11 +12,13 @@ export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
     return (
         <div className="item-list-container">
             <h1>{titulo}</h1>
+            <div className='items'>
             {loading ? (
                 <p>Cargando productos</p>
             ) : (
-                <ItemList list={products} />
+                <ItemList list={products} />            
             )}
+            </div>
         </div>
     )
 }

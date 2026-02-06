@@ -16,21 +16,18 @@ nav{
     color: black;
 }
 
-.carrito{
-    width: 2rem;
-    height: 2rem;
-}
-
 .link:hover{
     border-bottom: 2px solid black;
 
 }
 
-.carrito{
+.cart{
+    width: 2rem;
+    height: 2rem;
     transition: transform 0.5s ease;
 }
 
-.carrito:hover{
+.cart:hover{
     transform: scale(1.1);
 }
 

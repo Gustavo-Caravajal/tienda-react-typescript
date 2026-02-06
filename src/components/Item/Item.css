@@ -1,0 +1,21 @@
+.product-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 15rem;
+    border: 1.5px solid rgb(114, 113, 113);
+    padding: 1rem 0.5rem;
+    border-radius: 7.5px;
+}
+
+.product-image{
+    width: 8rem;
+    height: 10rem;
+    margin-bottom: auto;
+}
+
+h3{
+    text-align: center;
+}

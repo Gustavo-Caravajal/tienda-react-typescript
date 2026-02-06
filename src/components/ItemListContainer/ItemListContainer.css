@@ -1,0 +1,20 @@
+.item-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2.5rem;
+    min-height: auto;
+    width: 60vw;
+    gap: 1rem;
+}

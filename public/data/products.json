@@ -24,7 +24,7 @@
     "category": "Smartphone",
     "price": 65000,
     "description": "Móvil económico con batería de 5000 mAh y cámara principal de 108 MP.",
-    "imageUrl": "/images/redmi-note-13.png"
+    "imageUrl": "/images/Xiaomi-Redmi-Note-13-5g.png"
   },
   {
     "id": "4",
@@ -42,7 +42,7 @@
     "category": "Smartphone",
     "price": 140000,
     "description": "Modelo potente con pantalla OLED fluida y cámara avanzada de alta calidad.",
-    "imageUrl": "/images/moto-edge-50-pro-5g.png"
+    "imageUrl": "/images/Moto-edge-50-pro-5G.png"
   },
   {
     "id": "6",
@@ -51,7 +51,7 @@
     "category": "Smartphone",
     "price": 72000,
     "description": "Celular accesible con batería de larga duración y desempeño confiable.",
-    "imageUrl": "/images/moto-g-06-power.png"
+    "imageUrl": "/images/Moto-g-06-power.png"
   },
   {
     "id": "7",
@@ -60,7 +60,7 @@
     "category": "Smartphone",
     "price": 68000,
     "description": "Smartphone equilibrado con diseño moderno y buen rendimiento general.",
-    "imageUrl": "/images/realme-c75.png"
+    "imageUrl": "/images/Realme-C75.png"
   },
   {
     "id": "8",
@@ -69,6 +69,6 @@
     "category": "Smartphone",
     "price": 78000,
     "description": "Teléfono versátil con pantalla AMOLED y cámara destacada para su gama.",
-    "imageUrl": "/images/redmi-note-14-4g.png"
+    "imageUrl": "/images/Xiaomi-Redmi-Note-14-4G-.png"
   }
 ]
