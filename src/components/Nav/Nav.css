@@ -1,0 +1,36 @@
+nav{
+    display: flex;
+}
+
+.nav-items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.carrito{
+    width: 2rem;
+    height: 2rem;
+}
+
+.link:hover{
+    border-bottom: 2px solid black;
+
+}
+
+.carrito{
+    transition: transform 0.5s ease;
+}
+
+.carrito:hover{
+    transform: scale(1.1);
+}
+

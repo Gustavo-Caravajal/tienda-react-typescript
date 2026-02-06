@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "iPhone 15 Pro",
+    "brand": "Apple",
+    "category": "Smartphone",
+    "price": 160000,
+    "description": "Último modelo de Apple con pantalla OLED y cámara triple de 48 MP.",
+    "imageUrl": "/images/iphone-15-pro.png"
+  },
+  {
+    "id": "2",
+    "name": "Galaxy S24",
+    "brand": "Samsung",
+    "category": "Smartphone",
+    "price": 160000,
+    "description": "Teléfono con pantalla AMOLED de 120 Hz y cámara cuádruple de 50 MP.",
+    "imageUrl": "/images/galaxy-s24.png"
+  },
+  {
+    "id": "3",
+    "name": "Redmi Note 13",
+    "brand": "Xiaomi",
+    "category": "Smartphone",
+    "price": 65000,
+    "description": "Móvil económico con batería de 5000 mAh y cámara principal de 108 MP.",
+    "imageUrl": "/images/redmi-note-13.png"
+  },
+  {
+    "id": "4",
+    "name": "Galaxy A17 5G",
+    "brand": "Samsung",
+    "category": "Smartphone",
+    "price": 85000,
+    "description": "Equipo con conectividad 5G, pantalla amplia y rendimiento estable diario.",
+    "imageUrl": "/images/galaxy-a17-5g.png"
+  },
+  {
+    "id": "5",
+    "name": "Edge 50 Pro 5G",
+    "brand": "Motorola",
+    "category": "Smartphone",
+    "price": 140000,
+    "description": "Modelo potente con pantalla OLED fluida y cámara avanzada de alta calidad.",
+    "imageUrl": "/images/moto-edge-50-pro-5g.png"
+  },
+  {
+    "id": "6",
+    "name": "G06 Power",
+    "brand": "Motorola",
+    "category": "Smartphone",
+    "price": 72000,
+    "description": "Celular accesible con batería de larga duración y desempeño confiable.",
+    "imageUrl": "/images/moto-g-06-power.png"
+  },
+  {
+    "id": "7",
+    "name": "Realme C75",
+    "brand": "Realme",
+    "category": "Smartphone",
+    "price": 68000,
+    "description": "Smartphone equilibrado con diseño moderno y buen rendimiento general.",
+    "imageUrl": "/images/realme-c75.png"
+  },
+  {
+    "id": "8",
+    "name": "Redmi Note 14 4G",
+    "brand": "Xiaomi",
+    "category": "Smartphone",
+    "price": 78000,
+    "description": "Teléfono versátil con pantalla AMOLED y cámara destacada para su gama.",
+    "imageUrl": "/images/redmi-note-14-4g.png"
+  }
+]
