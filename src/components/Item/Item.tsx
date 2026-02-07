@@ -14,7 +14,7 @@ export const Item = ({ name, brand, price, description, imageUrl, children }: it
 
     return (
         <article className='product-card'>
-            <img className='product-image' src={imageUrl} alt={description} />
+            <img className='product-image' src={imageUrl} alt={description} draggable={false}/>
             <h3>{`${brand} ${name}`}</h3>
             <p className='price'>{`$${price}`}</p>
         </article>

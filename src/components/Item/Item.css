@@ -5,15 +5,21 @@
     justify-content: center;
     width: 10rem;
     height: 15rem;
-    border: 1.5px solid rgb(114, 113, 113);
+    border: 2px solid rgb(206, 206, 206);
     padding: 1rem 0.5rem;
     border-radius: 7.5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover{
+    transform: scale(1.04);
 }
 
 .product-image{
-    width: 8rem;
+    width: 10rem;
     height: 10rem;
     margin-bottom: auto;
+    object-fit: cover;
 }
 
 h3{

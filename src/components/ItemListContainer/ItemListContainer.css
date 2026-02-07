@@ -1,9 +1,9 @@
 .item-list-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
 }
 
@@ -14,7 +14,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 2.5rem;
-    min-height: auto;
-    width: 60vw;
+    width: 60%;
     gap: 1rem;
 }
