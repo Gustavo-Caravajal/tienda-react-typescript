@@ -17,13 +17,13 @@ export const Footer = () => {
             </div>
             <div className='footer-buildt-info'>
                 <div className='buildt'>
-                    <p className='footer-text'>Código fuente en GitHub</p>
+                    <p className='footer-text'>Código fuente en</p>
                     <a href="https://github.com/Gustavo-Caravajal/tienda-react-typescript" target='_blank'>
                         <img className='technologies' src="/icons/github.png" alt="github" draggable={false} />
                     </a>
                 </div>
                 <div className='buildt'>
-                    <p className='footer-text'>Aplicación desplegada en Vercel</p>
+                    <p className='footer-text'>Aplicación desplegada en</p>
                     <a href="https://vercel.com/" target='_blank'>
                         <img className='technologies' src="/icons/vercel.png" alt="vercel" draggable={false} />
                     </a>
