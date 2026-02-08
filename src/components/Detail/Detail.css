@@ -1,0 +1,42 @@
+.detail-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 75vh;
+    gap: 1rem;
+    border: 3.5px solid rgb(196, 195, 181);
+    border-radius: 2rem;
+}
+
+.detail-image{
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+}
+
+.detail-image:hover{
+    transform: scale(1.1);
+}
+
+.detail-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35rem;
+    height: 25rem;
+    gap: 1rem;
+    padding: 0 2rem
+
+}
+
+.detail-description{
+    text-align: justify;
+}
+
+.detail-price{
+    font-size: xx-large;
+    font-weight: 600;
+}

@@ -9,7 +9,7 @@ type ItemListContainerProps = {
 
 export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
     const { products, loading } = useProductsContext();
-    const { category } = useParams<string>()
+    const { category } = useParams<{category: string}>()
     const visibleProducts = category
         ? products.filter(p => p.category.toLowerCase() === category.toLowerCase())
         : products;

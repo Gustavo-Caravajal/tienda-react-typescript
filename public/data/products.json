@@ -5,7 +5,7 @@
     "brand": "Apple",
     "category": "Smartphone",
     "price": 160000,
-    "description": "Último modelo de Apple con pantalla OLED y cámara triple de 48 MP.",
+    "description": "El iPhone 15 Pro representa lo último en innovación de Apple, combinando un diseño premium con materiales de alta calidad y un rendimiento sobresaliente. Su pantalla OLED ofrece colores precisos y un brillo excepcional, ideal para consumir contenido multimedia y trabajar con comodidad. El sistema de cámaras avanzado permite capturar fotos y videos de nivel profesional en distintas condiciones de luz. Es una opción pensada para usuarios exigentes que buscan potencia, estabilidad y una experiencia fluida a largo plazo.",
     "imageUrl": "/images/iphone-15-pro.png"
   },
   {
@@ -14,7 +14,7 @@
     "brand": "Samsung",
     "category": "Smartphone",
     "price": 160000,
-    "description": "Teléfono con pantalla AMOLED de 120 Hz y cámara cuádruple de 50 MP.",
+    "description": "El Galaxy S24 es un smartphone de gama alta diseñado para ofrecer una experiencia visual y de rendimiento de primer nivel. Su pantalla AMOLED de alta tasa de refresco brinda una navegación suave y una excelente calidad de imagen. Incorpora un sistema de cámaras versátil que se adapta tanto a fotografía cotidiana como a capturas más avanzadas. Es ideal para quienes buscan tecnología moderna, diseño elegante y un desempeño confiable en el día a día.",
     "imageUrl": "/images/galaxy-s24.png"
   },
   {
@@ -23,7 +23,7 @@
     "brand": "Xiaomi",
     "category": "Smartphone",
     "price": 65000,
-    "description": "Móvil económico con batería de 5000 mAh y cámara principal de 108 MP.",
+    "description": "El Redmi Note 13 se posiciona como una excelente alternativa dentro de la gama media, ofreciendo un gran equilibrio entre precio y prestaciones. Su batería de alta capacidad garantiza autonomía para todo el día incluso con un uso intensivo. La cámara principal destaca dentro de su segmento, permitiendo obtener imágenes nítidas y detalladas. Es una opción atractiva para quienes buscan un celular completo sin realizar una gran inversión.",
     "imageUrl": "/images/Xiaomi-Redmi-Note-13-5g.png"
   },
   {
@@ -32,7 +32,7 @@
     "brand": "Samsung",
     "category": "Smartphone",
     "price": 85000,
-    "description": "Equipo con conectividad 5G, pantalla amplia y rendimiento estable diario.",
+    "description": "El Galaxy A17 5G es un dispositivo pensado para el uso diario, combinando conectividad moderna con un rendimiento estable. Su pantalla amplia mejora la experiencia al navegar, mirar videos o utilizar aplicaciones sociales. Gracias a su compatibilidad con redes 5G, permite una conexión más rápida y eficiente. Es una alternativa confiable para quienes priorizan funcionalidad, duración y buena relación calidad-precio.",
     "imageUrl": "/images/galaxy-a17-5g.png"
   },
   {
@@ -41,7 +41,7 @@
     "brand": "Motorola",
     "category": "Smartphone",
     "price": 140000,
-    "description": "Modelo potente con pantalla OLED fluida y cámara avanzada de alta calidad.",
+    "description": "El Edge 50 Pro 5G destaca por su enfoque en el rendimiento y la calidad visual, ofreciendo una experiencia fluida y moderna. Su pantalla OLED brinda colores intensos y una respuesta ágil ideal para juegos y contenido multimedia. El sistema de cámaras está diseñado para capturar imágenes de alta calidad con gran nivel de detalle. Es una excelente opción para usuarios que buscan potencia, diseño atractivo y tecnología avanzada.",
     "imageUrl": "/images/Moto-edge-50-pro-5G.png"
   },
   {
@@ -50,7 +50,7 @@
     "brand": "Motorola",
     "category": "Smartphone",
     "price": 72000,
-    "description": "Celular accesible con batería de larga duración y desempeño confiable.",
+    "description": "El G06 Power es un celular orientado a quienes valoran la autonomía y la confiabilidad en el uso cotidiano. Su batería de larga duración permite utilizar el dispositivo durante extensas jornadas sin preocuparse por la carga. Ofrece un desempeño estable para tareas diarias como mensajería, redes sociales y navegación web. Es una opción práctica para usuarios que buscan simplicidad, eficiencia y buen rendimiento general.",
     "imageUrl": "/images/Moto-g-06-power.png"
   },
   {
@@ -59,7 +59,7 @@
     "brand": "Realme",
     "category": "Smartphone",
     "price": 68000,
-    "description": "Smartphone equilibrado con diseño moderno y buen rendimiento general.",
+    "description": "El Realme C75 ofrece un equilibrio sólido entre diseño, rendimiento y funcionalidad para el uso diario. Su estética moderna lo convierte en una opción atractiva dentro de su segmento de precio. Cuenta con un desempeño adecuado para aplicaciones comunes y entretenimiento ligero. Es ideal para quienes buscan un smartphone confiable, accesible y con una experiencia de uso fluida.",
     "imageUrl": "/images/Realme-C75.png"
   },
   {
@@ -68,7 +68,7 @@
     "brand": "Xiaomi",
     "category": "Smartphone",
     "price": 78000,
-    "description": "Teléfono versátil con pantalla AMOLED y cámara destacada para su gama.",
+    "description": "El Redmi Note 14 4G es un dispositivo versátil que combina buenas prestaciones con un precio competitivo. Su pantalla AMOLED mejora la experiencia visual al consumir contenido y navegar por el sistema. La cámara ofrece resultados destacados dentro de su gama, ideal para fotografía cotidiana. Es una excelente alternativa para usuarios que buscan equilibrio entre calidad, rendimiento y costo.",
     "imageUrl": "/images/Xiaomi-Redmi-Note-14-4G-.png"
   }
 ]
