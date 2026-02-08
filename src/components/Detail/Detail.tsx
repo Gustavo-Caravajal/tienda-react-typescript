@@ -10,7 +10,7 @@ type DetailProps = {
 }
 
 export const Detail = ({name, brand, category, price, description, imageUrl}: DetailProps) => {
-
+                        
     return (
         <article className="detail-card">
             <img className="detail-image" src={imageUrl} alt={description} />
