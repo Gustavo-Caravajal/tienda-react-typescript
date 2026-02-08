@@ -15,15 +15,16 @@ export const Footer = () => {
                     <img className='technologies' src="/icons/css.png" alt="css" draggable={false} />
                 </a>
             </div>
-            <div className='footer-buildt-info'>
+            <div className='footer-info'>
                 <div className='buildt'>
-                    <p className='footer-text'>Código fuente en</p>
+                    <p className='footer-text'>Código</p>
                     <a href="https://github.com/Gustavo-Caravajal/tienda-react-typescript" target='_blank'>
                         <img className='technologies' src="/icons/github.png" alt="github" draggable={false} />
                     </a>
                 </div>
+                <p className='footer-text'>·</p>
                 <div className='buildt'>
-                    <p className='footer-text'>Aplicación desplegada en</p>
+                    <p className='footer-text'>Despliegue en</p>
                     <a href="https://vercel.com/" target='_blank'>
                         <img className='technologies' src="/icons/vercel.png" alt="vercel" draggable={false} />
                     </a>

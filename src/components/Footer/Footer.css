@@ -27,13 +27,6 @@ footer{
     object-fit: cover;
 }
 
-.footer-buildt-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .buildt{
     display: flex;
     flex-direction: row;
