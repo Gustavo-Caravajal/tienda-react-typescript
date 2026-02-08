@@ -70,5 +70,194 @@
     "price": 78000,
     "description": "El Redmi Note 14 4G es un dispositivo versátil que combina buenas prestaciones con un precio competitivo. Su pantalla AMOLED mejora la experiencia visual al consumir contenido y navegar por el sistema. La cámara ofrece resultados destacados dentro de su gama, ideal para fotografía cotidiana. Es una excelente alternativa para usuarios que buscan equilibrio entre calidad, rendimiento y costo.",
     "imageUrl": "/images/Xiaomi-Redmi-Note-14-4G-.png"
+  },
+   {
+    "id": "9",
+    "name": "14 Pro",
+    "brand": "Dell",
+    "category": "Notebook",
+    "price": 980000,
+    "description": "La notebook 14 Pro está orientada a usuarios profesionales que buscan un equilibrio entre potencia y portabilidad. Su rendimiento permite trabajar con múltiples aplicaciones de forma fluida y eficiente. La pantalla ofrece una experiencia visual cómoda para largas jornadas de uso. Es una opción confiable para productividad, estudio y trabajo avanzado.",
+    "imageUrl": "/images/Notebook-Dell-14-Pro_-AMD-Ryzen™-AI-7-350_-16GB-Ram_-512GB-SSD_-14″-Full-HD-_-Windows-11-Pro.png"
+  },
+  {
+    "id": "10",
+    "name": "ThinkPad T14",
+    "brand": "Lenovo",
+    "category": "Notebook",
+    "price": 950000,
+    "description": "La ThinkPad T14 es una notebook pensada para entornos laborales exigentes donde la estabilidad y el rendimiento son clave. Su diseño robusto la hace ideal para un uso intensivo y prolongado. Permite realizar tareas de productividad y multitarea con gran fluidez. Es una excelente alternativa para quienes priorizan confiabilidad y eficiencia.",
+    "imageUrl": "/images/Notebook-Lenovo-ThinkPad-T14_-AMD-Ryzen™-AI-5-PRO-340_-16GB-Ram_-512GB-SSD_-14″-Full-HD_-Windows-11-.png"
+  },
+  {
+    "id": "11",
+    "name": "Celeron N4020",
+    "brand": "PCBOX",
+    "category": "Notebook",
+    "price": 420000,
+    "description": "La notebook Celeron N4020 está orientada a tareas cotidianas como estudio, navegación web y uso de aplicaciones básicas. Ofrece un funcionamiento estable para el día a día y una experiencia simple y práctica. Su tamaño compacto facilita el transporte y el uso en distintos espacios. Es una opción accesible para quienes buscan funcionalidad sin complicaciones.",
+    "imageUrl": "/images/Notebook PCBOX Intel® Celeron® N4020, 4GB Ram, 128GB SSD, 14.1″ HD, Windows 11.png"
+  },
+  {
+    "id": "12",
+    "name": "Air M2",
+    "brand": "Apple",
+    "category": "Notebook",
+    "price": 1450000,
+    "description": "La Air M2 combina un diseño ultradelgado con un rendimiento ágil y eficiente. Ofrece una experiencia fluida tanto para trabajo profesional como para tareas creativas. Su pantalla de alta calidad mejora el confort visual en el uso diario. Es ideal para quienes buscan portabilidad, potencia y una experiencia premium.",
+    "imageUrl": "/images/MacBook Air 13 M2, 24GB Ram, 512GB SSD, 13.6″ WQXGA Midnight.png"
+  },
+  {
+    "id": "13",
+    "name": "TUF Gaming F16",
+    "brand": "ASUS",
+    "category": "Notebook",
+    "price": 1250000,
+    "description": "La TUF Gaming F16 está diseñada para ofrecer alto rendimiento en juegos y tareas exigentes. Su potencia permite ejecutar aplicaciones pesadas y juegos modernos con gran fluidez. La pantalla de alta tasa de refresco mejora notablemente la experiencia visual. Es una opción ideal para usuarios que buscan potencia, robustez y rendimiento sostenido.",
+    "imageUrl": "/images/Notebook ASUS TUF Gaming F16, Intel® Core i5-13450HX, 16GB Ram, 512GB SSD, NVIDIA® GeForce RTX 5050 8GB GDDR7, 16″ Full HD+ 165Hz, Free DOS.png"
+  },
+  {
+    "id": "14",
+    "name": "E14",
+    "brand": "Lenovo",
+    "category": "Notebook",
+    "price": 890000,
+    "description": "La E14 es una notebook pensada para productividad y trabajo profesional en movimiento. Ofrece un rendimiento ágil que facilita la multitarea y el uso intensivo de aplicaciones. Su tamaño compacto la hace cómoda para transportar y utilizar en distintos entornos. Es una alternativa equilibrada para quienes buscan eficiencia y portabilidad.",
+    "imageUrl": "/images/Notebook Lenovo E14, Intel® Core™ Ultra 7 155H, 16GB Ram, 512GB SSD, 14″ WUXGA, Free DOS.png"
+  },
+  {
+    "id": "15",
+    "name": "TravelMate P2",
+    "brand": "Acer",
+    "category": "Notebook",
+    "price": 930000,
+    "description": "La TravelMate P2 es una notebook orientada al ámbito profesional que combina rendimiento y confiabilidad. Permite trabajar cómodamente con múltiples aplicaciones y tareas exigentes. Su pantalla amplia mejora la experiencia durante largas jornadas de uso. Es una opción sólida para quienes priorizan productividad y estabilidad.",
+    "imageUrl": "/images/Notebook Acer TravelMate P2, Intel® Core™ i5 Ultra, 16GB Ram, 1TB SSD, 16″ WUXGA, Windows 11 Pro.png"
+  },
+  {
+    "id": "16",
+    "name": "ThinkPad E16 Gen 3",
+    "brand": "Lenovo",
+    "category": "Notebook",
+    "price": 970000,
+    "description": "La ThinkPad E16 Gen 3 está pensada para usuarios que necesitan una notebook confiable y potente para el trabajo diario. Su rendimiento permite afrontar tareas exigentes con fluidez y estabilidad. La pantalla de gran tamaño mejora la productividad y la comodidad visual. Es ideal para entornos laborales y uso profesional continuo.",
+    "imageUrl": "/images/Notebook-Lenovo-ThinkPad-E16-Gen3_-AMD-Ryzen™-7-250_-16GB-Ram_-512GB-SSD_-16″-WUXGA_-Free-DOS.png"
+  },
+  {
+    "id": "17",
+    "name": "Tab 10.1",
+    "brand": "Lenovo",
+    "category": "Tablet",
+    "price": 420000,
+    "description": "La Tab 10.1 es una tablet versátil pensada para el uso diario, ideal para estudiar, trabajar y consumir contenido multimedia. Su pantalla amplia ofrece una experiencia visual cómoda y definida. Incluye accesorios que mejoran la protección y el uso cotidiano. Es una opción equilibrada para quienes buscan funcionalidad y practicidad.",
+    "imageUrl": "/images/Tablet Lenovo Tab 10.1″ WUXGA 4GB+128GB + Estuche tipo folio.png"
+  },
+  {
+    "id": "18",
+    "name": "K11 LTE",
+    "brand": "Lenovo",
+    "category": "Tablet",
+    "price": 460000,
+    "description": "La K11 LTE es una tablet diseñada para usuarios que necesitan conectividad y rendimiento en movimiento. Permite navegar, trabajar y entretenerse sin depender de redes WiFi. Su tamaño la hace cómoda para transportar y usar en distintos contextos. Es ideal para quienes buscan flexibilidad y buen desempeño general.",
+    "imageUrl": "/images/Tablet Lenovo LTE K11 8GB Ram, 128GB Almacenamiento 11″ 4G.png"
+  },
+  {
+    "id": "19",
+    "name": "Tab 10.1 Kids",
+    "brand": "Lenovo",
+    "category": "Tablet",
+    "price": 390000,
+    "description": "La Tab 10.1 Kids está pensada para un uso familiar y educativo, ofreciendo una experiencia segura y funcional. Incluye accesorios que facilitan la interacción y protegen el dispositivo. Su pantalla permite disfrutar contenido educativo y multimedia con comodidad. Es una excelente opción para el aprendizaje y el entretenimiento diario.",
+    "imageUrl": "/images/Tablet Lenovo Tab 10.1″ WUXGA 4GB+64GB ,KIDS BUMPER CASE + Lápiz pasivo.png"
+  },
+  {
+    "id": "20",
+    "name": "BTAB 10",
+    "brand": "Vortex",
+    "category": "Tablet",
+    "price": 280000,
+    "description": "La BTAB 10 es una tablet orientada a tareas básicas como navegación web, streaming y uso de aplicaciones cotidianas. Ofrece una experiencia simple y práctica para el día a día. Su formato liviano facilita el transporte y el uso en distintos entornos. Es una alternativa accesible para quienes buscan funcionalidad esencial.",
+    "imageUrl": "/images/Tablet Vortex BTAB 10″ 4GB Ram, 64GB Almacenamiento.png"
+  },
+  {
+    "id": "21",
+    "name": "Galaxy Tab 9",
+    "brand": "Samsung",
+    "category": "Tablet",
+    "price": 520000,
+    "description": "La Galaxy Tab 9 combina diseño moderno con un rendimiento sólido para el uso cotidiano. Su pantalla ofrece una experiencia visual fluida y agradable para contenido multimedia. Es ideal tanto para entretenimiento como para tareas de productividad liviana. Una opción confiable dentro del ecosistema Samsung.",
+    "imageUrl": "/images/Tablet Samsung Galaxy TAB9.png"
+  },
+  {
+    "id": "22",
+    "name": "Tab Pro 12.7",
+    "brand": "Lenovo",
+    "category": "Tablet",
+    "price": 890000,
+    "description": "La Tab Pro 12.7 está orientada a usuarios exigentes que buscan alto rendimiento y una experiencia premium. Su pantalla de gran tamaño mejora notablemente el trabajo y el entretenimiento. Incluye accesorios que potencian la productividad y la creatividad. Es ideal para uso profesional y multimedia avanzado.",
+    "imageUrl": "/images/Tablet Lenovo Tab PRO 12.7″ 3K 144HZ 8GB+256GB + Keyboard Pack + Precision Pen + moto buds Android 14.png"
+  },
+  {
+    "id": "23",
+    "name": "Legion Tab",
+    "brand": "Lenovo",
+    "category": "Tablet",
+    "price": 950000,
+    "description": "La Legion Tab está pensada para usuarios que buscan máximo rendimiento en una tablet compacta. Ofrece una experiencia fluida tanto en juegos como en tareas exigentes. Su pantalla de alta calidad mejora la inmersión visual. Es una excelente opción para quienes priorizan potencia y portabilidad.",
+    "imageUrl": "/images/Tablet Lenovo LEGION TAB 8.8″ QCOM SNAP GEN8 12GB DDR5 256GB UFS 4.0 ANDROID 14 + FOLIO + PELICULA DE VIDRIO.png"
+  },
+  {
+    "id": "24",
+    "name": "MX Master 4",
+    "brand": "Logitech",
+    "category": "Accessory",
+    "price": 185000,
+    "description": "El MX Master 4 es un mouse inalámbrico pensado para productividad y uso profesional. Ofrece una experiencia precisa y cómoda incluso durante largas jornadas de trabajo. Su conectividad Bluetooth permite utilizarlo con distintos dispositivos de forma sencilla. Es ideal para quienes buscan rendimiento, ergonomía y confiabilidad.",
+    "imageUrl": "/images/Mouse Inalámbrico Logitech MX Master 4 BT Negro.png"
+  },
+  {
+    "id": "25",
+    "name": "QCam 6000",
+    "brand": "Genius",
+    "category": "Accessory",
+    "price": 78000,
+    "description": "La QCam 6000 es una webcam diseñada para videollamadas y transmisiones con buena calidad de imagen. Permite comunicarse con claridad tanto en entornos laborales como personales. Incorpora micrófono para una experiencia más completa. Es una opción práctica para home office y estudio.",
+    "imageUrl": "/images/WEBCAM GENIUS QCAM 6000 1080P 30FPS CON MIC BLACK.png"
+  },
+  {
+    "id": "26",
+    "name": "K380",
+    "brand": "Logitech",
+    "category": "Accessory",
+    "price": 92000,
+    "description": "El K380 es un teclado Bluetooth compacto pensado para el uso diario y la portabilidad. Permite conectarse a múltiples dispositivos y alternar entre ellos fácilmente. Su diseño liviano lo hace ideal para escritorios pequeños o trabajo en movimiento. Es una excelente opción para productividad y comodidad.",
+    "imageUrl": "/images/Teclado Logitech Bluetooth Multi-device k380 Gris.png"
+  },
+  {
+    "id": "27",
+    "name": "Storm Grip",
+    "brand": "Raptor",
+    "category": "Accessory",
+    "price": 65000,
+    "description": "El Storm Grip es un mouse gamer inalámbrico diseñado para ofrecer precisión y control en juegos exigentes. Cuenta con múltiples botones que permiten personalizar la experiencia de uso. Su diseño ergonómico mejora la comodidad durante sesiones prolongadas. Es ideal para jugadores que buscan rendimiento y estilo.",
+    "imageUrl": "/images/Mouse Gamer Raptor Storm Grip Wireless 9 botones 24000dpi retroiluminado.png"
+  },
+  {
+    "id": "28",
+    "name": "AW720H",
+    "brand": "Alienware",
+    "category": "Accessory",
+    "price": 320000,
+    "description": "Los AW720H son auriculares gaming diseñados para ofrecer una experiencia de sonido inmersiva. Permiten una conexión inalámbrica estable para sesiones prolongadas de juego. Su diseño cómodo facilita el uso durante largas horas. Son ideales para jugadores que buscan calidad de audio y libertad de movimiento.",
+    "imageUrl": "/images/Auriculares Alienware AW720H Dual Mode Wireless Gaming.png"
+  },
+  {
+    "id": "29",
+    "name": "True AUC001",
+    "brand": "Belkin",
+    "category": "Accessory",
+    "price": 115000,
+    "description": "Los True AUC001 son auriculares inalámbricos pensados para el uso cotidiano y la movilidad. Ofrecen una experiencia cómoda para escuchar música y atender llamadas. Su conectividad Bluetooth facilita el uso con distintos dispositivos. Son una opción práctica para quienes buscan simplicidad y buen rendimiento.",
+    "imageUrl": "/images/Auricular Belkin True AUC001 Wireless Bluetooh.png"
   }
 ]

@@ -9,13 +9,18 @@ type DetailProps = {
     imageUrl: string
 }
 
-export const Detail = ({name, brand, category, price, description, imageUrl}: DetailProps) => {
-                        
+export const Detail = ({ name, brand, category, price, description, imageUrl }: DetailProps) => {
+
     return (
         <article className="detail-card">
             <img className="detail-image" src={imageUrl} alt={description} />
             <div className="detail-data">
-                <h2 className="title">{category} {brand} {name}</h2>
+                {category === "accessory" ? (
+                    <h2 className="title">{category} {brand} {name}</h2>
+                ) : (
+                    <h2 className="title">{brand} {name}</h2>
+                )
+                }
                 <h2 className="detail-price">${price}</h2>
                 <p className='detail-description'>Descripcion: {description}</p>
             </div>
