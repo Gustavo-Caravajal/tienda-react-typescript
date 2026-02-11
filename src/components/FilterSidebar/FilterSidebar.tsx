@@ -1,17 +1,11 @@
 import './FilterSidebar.css'
-import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { useFilterContext } from '../../context/FilterContext/useFilterContext';
 
-type FilterSidebarProps = {
-    brands: string[];
-    minPrice: number;
-    maxPrice: number;
-}
 
-export const FilterSidebar = ({ brands, minPrice, maxPrice }: FilterSidebarProps) => {
-    const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-    const [price, setPrice] = useState<number>(maxPrice);
-
+export const FilterSidebar = () => {
+    const { selectedBrands, setSelectedBrands, price, setPrice, uniqueBrands, minPrice,  maxPrice } = useFilterContext();
+    
     const handleCheckboxChange = (brand: string, checked: boolean) => {
         if (checked) {
             setSelectedBrands([...selectedBrands, brand]);
@@ -22,11 +16,7 @@ export const FilterSidebar = ({ brands, minPrice, maxPrice }: FilterSidebarProps
 
     const handleRange = (value: number) => setPrice(value);
 
-    useEffect(() => {
-        setSelectedBrands([]);
-        setPrice(maxPrice);
-    }, [brands, maxPrice]);
-
+   
     return (
         <div className='filter-container'>
             <h3>Filtros</h3>
@@ -38,7 +28,7 @@ export const FilterSidebar = ({ brands, minPrice, maxPrice }: FilterSidebarProps
                     value={price}
                     onChange={(e) => handleRange(Number(e.target.value))}
                 />
-                {brands.map((brand) => (
+                {uniqueBrands.map((brand) => (
                     <Form.Check
                         key={brand}
                         type="checkbox"

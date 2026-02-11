@@ -1,13 +1,21 @@
-.item-list-container{
+.item-list-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     min-height: 100vh;
 }
 
-.items{
+.products-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.items {
     display: flex;
     align-items: center;
     justify-content: center;
