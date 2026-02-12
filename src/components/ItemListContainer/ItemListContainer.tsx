@@ -16,20 +16,21 @@ export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
     return (
         <div className="item-list-container">
             <h1>{titulo}</h1>
+            {loading ? (
+                    <p className='mensaje'>Cargando productos</p>
+                ) : (
+                    !visibleProducts.length &&
+                    <p className='mensaje'>No hay productos para esta categoria</p>
+
+                )}
             <div className='products-layout'>
-                <>{category?.trim() &&
+                {category?.trim() &&
                     <FilterSidebar />
-                }</>
+                }
                 <div className='items'>
-                    {loading ? (
-                        <p>Cargando productos</p>
-                    ) : (
-                        visibleProducts.length ? (
-                            < ItemList list={visibleProducts} />
-                        ) : (
-                            <p>No hay productos para esta categoria</p>
-                        )
-                    )}
+                    {visibleProducts.length > 0 &&
+                        < ItemList list={visibleProducts} />
+                    }
                 </div>
             </div>
         </div>

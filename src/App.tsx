@@ -6,21 +6,25 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { ProductsProvider } from './context/ProductsContext/ProductsProvider'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 import { FilterProvider } from './context/FilterContext/FilterProvider'
+import { CartProvider } from './context/CartContext/CartProvider'
 
 function App() {
 
   return (
     <>
       <BrowserRouter >
-        <Header />
-        <ProductsProvider>
-          <Routes>
-            <Route path={`/`} element={<FilterProvider><ItemListContainer titulo={"Productos"}/></FilterProvider>}/>
-            <Route path={`/category/:category`} element={<FilterProvider><ItemListContainer titulo={"Productos"}/></FilterProvider>}/>
-            <Route path={`/detail/:id`} element={<ItemDetailContainer/>}/>
-          </Routes>
-        </ProductsProvider>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <ProductsProvider>
+            <Routes>
+              <Route path={`/`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
+              <Route path={`/category/:category`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
+              <Route path={`/detail/:id`} element={<ItemDetailContainer />} />
+            </Routes>
+
+          </ProductsProvider>
+          <Footer />
+        </CartProvider>
       </BrowserRouter>
     </>
   )

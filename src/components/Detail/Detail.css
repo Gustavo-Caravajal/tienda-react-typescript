@@ -44,7 +44,7 @@ h2.title,
     font-weight: 600;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .detail-card {
         flex-direction: column;
         width: 90%;
