@@ -3,9 +3,10 @@ import Form from 'react-bootstrap/Form';
 import { useFilterContext } from '../../context/FilterContext/useFilterContext';
 
 
+
 export const FilterSidebar = () => {
-    const { selectedBrands, setSelectedBrands, price, setPrice, visibleProducts, uniqueBrands, minPrice,  maxPrice } = useFilterContext();
-    
+    const { selectedBrands, setSelectedBrands, price, setPrice,  uniqueBrands, minPrice,  maxPrice } = useFilterContext();
+
     const handleCheckboxChange = (brand: string, checked: boolean) => {
         if (checked) {
             setSelectedBrands([...selectedBrands, brand]);
@@ -17,7 +18,7 @@ export const FilterSidebar = () => {
     const handleRange = (value: number) => setPrice(value);
 
    
-    return (<>{visibleProducts.length > 0 &&
+    return (
         <div className='filter-container'>
             <h3>Filtros</h3>
             <Form className='filter-form'>
@@ -28,6 +29,7 @@ export const FilterSidebar = () => {
                     value={price}
                     onChange={(e) => handleRange(Number(e.target.value))}
                 />
+                <Form.Label>Marcas</Form.Label>
                 {uniqueBrands.map((brand) => (
                     <Form.Check
                         key={brand}
@@ -40,7 +42,6 @@ export const FilterSidebar = () => {
                     />
                 ))}
             </Form>
-        </div>
-        }</>
+        </div>      
     )
 }

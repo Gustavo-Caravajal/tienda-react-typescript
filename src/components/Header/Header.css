@@ -13,8 +13,8 @@ header {
 }
 
 .logo {
-    width: 150px;
-    height: 75px;
+    width: 130px;
+    height: 65px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -66,7 +66,7 @@ header {
 @media (max-width: 768px) {
     .header {
         align-items: flex-end;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
 
     .header.closed{
@@ -98,13 +98,15 @@ header {
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem 1.5rem 0 1.5rem;
-        width: 85%;        
+        min-width: 90%;        
     }
 
     .hamburger-btn {
         display: flex;
         border: none;
         align-self: flex-end;
+        background-color: transparent;
+        padding: 0;
     }
 
     .category-list.open {

@@ -11,7 +11,7 @@ export const Header = () => {
     return (
         <header className={`${show ? "header" : "header closed"}`}>
             <div className='main-header'>
-                <img className='logo' src="/images/logo.png" alt="logo" draggable={false} onClick={() => toggleMenu()} />
+                <img className='logo' src="/images/logo.png" alt="logo" draggable={false} />
                 <div className='menu'>
                     <button className='hamburger-btn' onClick={() => toggleMenu()}>☰</button>
                     <Nav show={show} toggleMenu={toggleMenu} />

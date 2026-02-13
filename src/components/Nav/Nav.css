@@ -58,9 +58,19 @@ nav {
     }
 
     .nav-items.open {
+        display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        gap: 1rem;
+    }
+
+    .nav-item.menu-item.first{
+        order: 1;
+    }
+
+    .nav-item.menu-item.second{
+        order: 2;
     }
 
     .nav-items.open .menu-item {

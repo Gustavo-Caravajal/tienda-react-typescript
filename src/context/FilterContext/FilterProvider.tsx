@@ -31,7 +31,6 @@ export const FilterProvider = ({ children }: FilterProviderProps) => {
         .filter(p => selectedBrands.length === 0 || selectedBrands.includes(p.brand))
         .filter(p => price == maxPrice || p.price < price)
 
-
     useEffect(() => {
         setSelectedBrands([]);
         setPrice(maxPrice);
