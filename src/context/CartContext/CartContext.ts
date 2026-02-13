@@ -5,6 +5,7 @@ import type { Product } from "../../types/Product"
 export type CartContextType = {
     cart: Product[];
     addItem: (item: Product) => void;
+    deleteItem: (id: string) => void;
     clearCart: () => void;
     getTotalItems: () => number | undefined;
 }

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import './Detail.css'
 
 type DetailProps = {
@@ -6,10 +7,11 @@ type DetailProps = {
     category: string;
     price: number;
     description: string;
-    imageUrl: string
+    imageUrl: string;
+    children: ReactNode;
 }
 
-export const Detail = ({ name, brand, category, price, description, imageUrl }: DetailProps) => {
+export const Detail = ({ name, brand, category, price, description, imageUrl, children }: DetailProps) => {
 
     return (
         <article className="detail-card">
@@ -23,6 +25,7 @@ export const Detail = ({ name, brand, category, price, description, imageUrl }: 
                 }
                 <h2 className="detail-price">${price}</h2>
                 <p className='detail-description'>Descripcion: {description}</p>
+                {children}
             </div>
         </article>
     )

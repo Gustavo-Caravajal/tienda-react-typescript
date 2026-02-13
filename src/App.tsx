@@ -21,7 +21,6 @@ function App() {
               <Route path={`/category/:category`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
               <Route path={`/detail/:id`} element={<ItemDetailContainer />} />
             </Routes>
-
           </ProductsProvider>
           <Footer />
         </CartProvider>

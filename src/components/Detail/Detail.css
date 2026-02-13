@@ -54,6 +54,7 @@ h2.title,
     .detail-data {
         align-items: center;
         justify-content: center;
+        width: auto;
     }
 
     h2.title {
@@ -62,7 +63,7 @@ h2.title,
     }
 
     .detail-description {
-        width: 50%;
+        width: 90%;
     }
 
     .detail-image {
