@@ -66,15 +66,23 @@
     object-fit: cover;
 }
 
-.botones-carrito {
+.cart-summary{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 75%;
     gap: 1rem;
 }
 
-.boton-carrito {
+.buy-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.cart-btn {
     color: white;
     background-color: black;
     padding: 0.5rem 0.5rem;
@@ -85,7 +93,7 @@
     cursor: pointer;
 }
 
-.boton-carrito:hover {
+.cart-btn:hover {
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
     transform: scale(1.025);
 }

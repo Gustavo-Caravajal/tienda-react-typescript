@@ -2,7 +2,7 @@ import './Cart.css'
 import { useCartContext } from "../../context/CartContext/useCartContext"
 
 export const Cart = () => {
-    const { cart, deleteItem, totalItemPrice, clearCart, checkout } = useCartContext();
+    const { cart, deleteItem, totalItemPrice, clearCart, total, checkout } = useCartContext();
 
     return (
         <section className="cart-section">
@@ -41,10 +41,13 @@ export const Cart = () => {
                     <p>Tu carrito esta vacio</p>
                 )}
             </div>
-            <div className='botones-carrito'>
-                <button onClick={() => {clearCart()}} className='boton-carrito'>Vaciar carrito</button>
-                <button onClick={() => {checkout()}} className='boton-carrito'>Finalizar compra</button>
-            </div>
+            {cart.length > 0 && (<div className='cart-summary '>
+                <p>Total a pagar: ${total()}</p>
+                <div className='buy-buttons'>
+                    <button onClick={() => { clearCart() }} className='cart-btn'>Vaciar carrito</button>
+                    <button onClick={() => { checkout() }} className='cart-btn'>Finalizar compra</button>
+                </div>
+            </div>)}
         </section >
     )
 }

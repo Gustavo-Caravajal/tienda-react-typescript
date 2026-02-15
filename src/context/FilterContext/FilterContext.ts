@@ -13,5 +13,4 @@ export type FilterContextType = {
     maxPrice: number;
 }
 
-
 export const FilterContext = createContext<FilterContextType | undefined>(undefined);
