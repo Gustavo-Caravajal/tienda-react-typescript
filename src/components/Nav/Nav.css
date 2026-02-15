@@ -1,5 +1,6 @@
 nav {
     display: flex;
+    height: auto;
 }
 
 .nav-items {
@@ -9,6 +10,7 @@ nav {
     justify-content: flex-end;
     list-style: none;
     gap: 1.5rem;
+    margin: 1rem 0 0 0;
 }
 
 .link {
@@ -40,6 +42,10 @@ nav {
 }
 
 @media (max-width: 768px) {
+    nav{
+        margin-bottom: 1rem;
+    }
+    
     .nav-items {
         display: flex;
         flex-direction: column;
