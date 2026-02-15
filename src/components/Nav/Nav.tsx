@@ -17,7 +17,7 @@ export const Nav = ({show, toggleMenu}: navProps) => {
                     <Link className='link' to={"/"}>Inicio</Link>
                 </li>
                 <li className='nav-item menu-item first' onClick={() => toggleMenu()}>
-                    <Link className='link-cart' to={"/"}>
+                    <Link className='link-cart' to={"/carrito"}>
                         <img className='cart' src="/icons/carrito-de-compras.png" alt="Carrito de compras" />
                     </Link>
                     {(getTotalItems()) &&
