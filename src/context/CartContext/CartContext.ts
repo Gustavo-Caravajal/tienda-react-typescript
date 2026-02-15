@@ -9,6 +9,7 @@ export type CartContextType = {
     totalItemPrice: (item: Product) => number;
     clearCart: () => void;
     getTotalItems: () => number | undefined;
+    total: () => number;
     checkout: () => void;
 }
 
