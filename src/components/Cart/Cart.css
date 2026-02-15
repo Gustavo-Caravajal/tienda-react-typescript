@@ -1,21 +1,15 @@
-.cart-section{
+.cart-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    min-height: 100vh;
+    min-height: 60vh;
     gap: 3rem;
     padding: 3rem 0;
 }
 
-.title-container{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.product-cart-container{
+.product-cart-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,21 +18,28 @@
     width: 75%;
 }
 
-.cart-item{
+.title-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.cart-item {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     padding: 1rem 0;
-    border-bottom: 1px solid rgb(196, 195, 181);;
+    border-bottom: 1px solid rgb(196, 195, 181);
 }
 
-.delete-icon{
-    width:32px;
+.delete-icon {
+    cursor: pointer;
+    width: 32px;
     height: 32px;
 }
 
-.product{
+.product {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -46,18 +47,66 @@
     gap: 1rem;
 }
 
-.quantity-text{
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-text {
     width: 25%;
 }
 
-.total-text{
+.total-text {
     width: 20%;
 }
 
-
-
-.product-img{
+.product-img {
     width: 5rem;
     height: 5rem;
     object-fit: cover;
+}
+
+.botones-carrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 75%;
+    gap: 1rem;
+}
+
+.boton-carrito{
+    color: white;
+    background-color: black;
+    padding: 0.5rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgb(156, 156, 156);
+}
+
+@media (max-width: 768px) {
+    .title-container {
+        display: none;
+    }
+
+    .product-text,
+    .quantity-text,
+    .total-text,
+    .product-info{
+        text-align: center;
+        width: auto;
+    }
+
+    .product{
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cart-item{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+
 }

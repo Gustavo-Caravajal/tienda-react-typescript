@@ -9,6 +9,7 @@ export type CartContextType = {
     totalItemPrice: (item: Product) => number;
     clearCart: () => void;
     getTotalItems: () => number | undefined;
+    checkout: () => void;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);

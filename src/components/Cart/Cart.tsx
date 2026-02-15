@@ -2,7 +2,7 @@ import './Cart.css'
 import { useCartContext } from "../../context/CartContext/useCartContext"
 
 export const Cart = () => {
-    const { cart, deleteItem, totalItemPrice } = useCartContext();
+    const { cart, deleteItem, totalItemPrice, clearCart, checkout } = useCartContext();
 
     return (
         <section className="cart-section">
@@ -23,12 +23,12 @@ export const Cart = () => {
                                     alt={item.name}
                                 />
                                 <div className="product-info">
-                                    <h4>{item.brand} {item.name}</h4>
-                                    <p>${item.price}</p>
+                                    <h4 className='product-text'>{item.brand} {item.name}</h4>
+                                    <p className='product-text'>${item.price}</p>
                                 </div>
                             </div>
-                            <p className='quantity-text'>{item.quantity}</p>
-                            <p className='total-text'>{totalItemPrice(item)}</p>
+                            <p className='quantity-text'>x{item.quantity}</p>
+                            <p className='total-text'>${totalItemPrice(item)}</p>
                             <img
                                 className="delete-icon"
                                 src="../../../public/icons/eliminar.png"
@@ -40,6 +40,10 @@ export const Cart = () => {
                 </>) : (
                     <p>Tu carrito esta vacio</p>
                 )}
+            </div>
+            <div className='botones-carrito'>
+                <button onClick={() => {clearCart()}} className='boton-carrito'>Vaciar carrito</button>
+                <button onClick={() => {checkout()}} className='boton-carrito'>Finalizar compra</button>
             </div>
         </section >
     )

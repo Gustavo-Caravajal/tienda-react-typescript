@@ -49,12 +49,21 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     }
 
     const totalItemPrice = (item: Product): number => {
-        return item.price * item.quantity;
+        const totalItemPrice = item.price * item.quantity
+        return Math.round(totalItemPrice * 100)/100;
     }
 
     const total = () => {
         const total = cart.reduce((acum, prod) => prod.price * prod.quantity + acum, 0);
         return Math.round(total * 100)/100;
+    }
+
+    const checkout = () => {
+        const ok = confirm("Seguro que quieres finalizar la compra?");
+        if(ok){
+            alert("Compra finalizada con exito!")
+            clearCart();
+        }
     }
 
     const values = {
@@ -64,7 +73,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         totalItemPrice,
         clearCart,
         getTotalItems,
-        total
+        total,
+        checkout
     }
 
     return <CartContext.Provider value={values}>
