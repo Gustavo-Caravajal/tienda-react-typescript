@@ -8,7 +8,6 @@ type ProductsProviderProps = {
 }
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
-
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -25,8 +24,6 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
         }
         fetchProducts();
     }, []);
-
-
 
     return (
         <ProductsContext.Provider value={{products, setProducts, loading}}>

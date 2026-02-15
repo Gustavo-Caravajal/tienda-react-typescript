@@ -8,12 +8,11 @@ type ItemListProps = {
 
 export const ItemList = ({ list }: ItemListProps) => {
 
-    return (<>
-        {
-            list.map(product => (
-                <Item key={product.id} {...product} children={<Button texto="Ver producto"  color="rgb(247, 244, 205)"/>} />
-            ))
-        }
-
-    </>)
+    return (
+        <>
+            {list.map(product => (
+                <Item key={product.id} {...product} children={<Button texto="Ver producto" color="rgb(247, 244, 205)" />} />
+            ))}
+        </>
+    )
 }

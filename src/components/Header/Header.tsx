@@ -8,6 +8,7 @@ export const Header = () => {
     const toggleMenu = () => {
         setShow(!show);
     }
+    
     return (
         <header className={`${show ? "header" : "header closed"}`}>
             <div className='main-header'>

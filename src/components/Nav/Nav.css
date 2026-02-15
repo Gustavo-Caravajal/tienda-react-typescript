@@ -39,9 +39,6 @@ nav {
     gap: 0.5rem;
 }
 
-
-
-
 @media (max-width: 768px) {
     .nav-items {
         display: flex;
@@ -61,7 +58,7 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: flex;
         gap: 1rem;
     }
 

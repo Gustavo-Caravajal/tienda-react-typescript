@@ -7,10 +7,9 @@ type CountProps = {
     onConfirm: (quantity: number) => void;
 }
 
-
 export const Count = ({ btnText, onConfirm }: CountProps) => {
     const [count, setCount] = useState<number>(1);
-
+    
     const increment = () => {
         setCount((prev) => prev + 1);
     }

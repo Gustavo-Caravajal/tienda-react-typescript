@@ -11,8 +11,7 @@ type ItemListContainerProps = {
 export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
     const { category } = useParams<{ category: string }>()
     const { loading, visibleProducts } = useFilterContext();
-
-
+    
     return (
         <div className="item-list-container">
             <h1>{titulo}</h1>

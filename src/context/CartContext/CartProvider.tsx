@@ -8,9 +8,8 @@ type CartProviderProps = {
 }
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-
     const [cart, setCart] = useState<Product[]>([]);
-
+    
     const exists = (id: string): boolean => {
         const exist = cart.some(p => p.id === id);
         return exist;

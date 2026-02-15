@@ -2,8 +2,6 @@ import './FilterSidebar.css'
 import Form from 'react-bootstrap/Form';
 import { useFilterContext } from '../../context/FilterContext/useFilterContext';
 
-
-
 export const FilterSidebar = () => {
     const { selectedBrands, setSelectedBrands, price, setPrice,  uniqueBrands, minPrice,  maxPrice } = useFilterContext();
 
@@ -16,8 +14,7 @@ export const FilterSidebar = () => {
     }
 
     const handleRange = (value: number) => setPrice(value);
-
-   
+       
     return (
         <div className='filter-container'>
             <h3>Filtros</h3>
