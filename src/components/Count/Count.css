@@ -1,4 +1,4 @@
-.count-container{
+.count-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -6,21 +6,22 @@
     align-items: center;
 }
 
-.quantity-container{
+.quantity-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 2rem;
 }
 
-.quantity-btn{
+.quantity-btn {
     width: 2.25rem;
     height: 2.25rem;
     border: 1px solid gray;
     border-radius: 6px;
+    cursor: pointer;
 }
 
-.confirm-btn{
+.confirm-btn {
     width: 9.5rem;
     height: 2.25rem;
     background-color: black;
@@ -28,10 +29,14 @@
     text-decoration: none;
     border: 1px solid black;
     border-radius: 10px;
+    transition: box-shadow 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
+    cursor: pointer;
 }
 
-.confirm-btn:hover{
+.confirm-btn:hover {
     background-color: rgb(29, 29, 29);
-    transform: scale(1.025);
+    color: rgb(216, 216, 216);;
+    transform: scale(1.0125);
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
 }

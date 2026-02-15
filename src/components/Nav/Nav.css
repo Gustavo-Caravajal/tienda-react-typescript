@@ -65,16 +65,21 @@ nav {
         gap: 1rem;
     }
 
-    .nav-item.menu-item.first{
+    .nav-item.menu-item.first {
         order: 1;
     }
 
-    .nav-item.menu-item.second{
+    .nav-item.menu-item.second {
         order: 2;
     }
 
     .nav-items.open .menu-item {
         max-height: 50px;
         opacity: 1;
+    }
+
+    .cart {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }

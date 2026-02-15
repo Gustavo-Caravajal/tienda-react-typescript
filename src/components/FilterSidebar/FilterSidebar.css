@@ -22,10 +22,15 @@
 
 .form-range {
     width: 90%;
+    cursor: pointer;
 }
 
 label.form-label {
     align-self: center;
+}
+
+.form-check-input{
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
