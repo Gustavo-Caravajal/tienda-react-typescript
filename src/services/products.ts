@@ -1,30 +1,37 @@
-import type { Product } from "../types/Product";
+import { supabase } from "../supabase-client";
+import type { Product, ProductWithRelations } from "../types/Product";
 
-const BASE_URL: string = ""
+export const getProducts = async (): Promise<ProductWithRelations[]> => {
+    const { data, error } = await supabase
+        .from('products')
+        .select(`
+            *,
+            brand:brands(*),
+            category:categories(*)
+        `)
+        .order(
+            "created_at",
+            { ascending: true }
+        );
 
-export const getProducts = async (): Promise<Product[]> => {
-    const res = await fetch("/data/products.json");
-
-    if (!res.ok) {
-        throw new Error("La peticion a los productos fallo");
+    if (error) {
+        throw new Error(`Error getting products: ${error.message}`);
     }
 
-    const results: Product[] = await res.json();
-    return results;
+    return data ?? [];
 }
 
-export const createProduct = async (product: Product): Promise<Product> => {
-    const res = await fetch(BASE_URL, {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(product)
-    });
+export const createProduct = async (product: Omit<Product, "id">): Promise<Product> => {
+    const { data, error } = await supabase
+        .from("products")
+        .insert(product)
+        .select()
+        .single();
 
-    if(!res.ok){
-        throw new Error("No se pudo crear el producto");
+    if (error) {
+        throw new Error(`Error creating product: ${error.message}`);
     }
 
-    const result = res.json();
-    return result;
-
+    return data;
 }
+

@@ -19,7 +19,7 @@ export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
                 <p className='mensaje'>Cargando productos</p>
             ) : (
                 visibleProducts.length < 1 ? (
-                    <p className='mensaje'>No hay productos para esta categoria</p>
+                    <p className='mensaje'>No hay productos</p>
                 ) : (
                     <p className='mensaje'>ㅤ</p>
                 )

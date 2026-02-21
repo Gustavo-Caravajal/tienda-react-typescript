@@ -1,9 +1,9 @@
 import { createContext, type Dispatch, type SetStateAction } from "react";
-import type { Product } from "../../types/Product";
+import type { ProductWithRelations } from "../../types/Product";
 
 export type ProductsContextType = {
-    products: Product[];
-    setProducts: Dispatch<SetStateAction<Product[]>>;
+    products: ProductWithRelations[];
+    setProducts: Dispatch<SetStateAction<ProductWithRelations[]>>;
     loading: boolean;
 }
 

@@ -1,0 +1,32 @@
+import { supabase } from "../supabase-client";
+import type { Category } from "../types/Category";
+
+export const getCategories = async (): Promise<Category[]> => {
+    const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .order(
+            "created_at",
+            { ascending: true }
+        );
+
+    if(error){
+        throw new Error(`Error getting categories: ${error.message}`);
+    }
+
+    return data ?? [];
+}
+
+export const createCategory = async (category: Omit<Category, "id">): Promise<Category> => {
+    const { data, error } = await supabase
+        .from("categories")
+        .insert(category)
+        .select()
+        .single();
+
+    if(error){
+        throw new Error(`Error creating category: ${error.message}`);
+    }
+    
+    return data;
+}

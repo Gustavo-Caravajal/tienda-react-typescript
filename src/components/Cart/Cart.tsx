@@ -23,7 +23,7 @@ export const Cart = () => {
                                     alt={item.name}
                                 />
                                 <div className="product-info">
-                                    <h4 className='product-text'>{item.brand} {item.name}</h4>
+                                    <h4 className='product-text'>{item.brand.name} {item.name}</h4>
                                     <p className='product-text'>${item.price}</p>
                                 </div>
                             </div>

@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
 import './Item.css'
+import { Link } from 'react-router-dom';
 import type { ReactNode } from 'react';
 
 type itemProps = {
-    id: string;
+    id: number;
     name: string;
     brand: string;
     price: number;
@@ -12,7 +12,7 @@ type itemProps = {
     children?: ReactNode;
 }
 
-export const Item = ({ id, name, brand,  price, description, imageUrl, children }: itemProps) => {
+export const Item = ({ id, name, brand, price, description, imageUrl, children }: itemProps) => {
 
     return (
         <article className='product-card'>

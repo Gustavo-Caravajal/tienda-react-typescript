@@ -1,7 +1,7 @@
 import './ItemDetailContainer.css'
 import { useProductsContext } from "../../context/ProductsContext/useProductsContext"
 import { useParams } from 'react-router-dom';
-import type { Product } from '../../types/Product';
+import type { ProductWithRelations } from '../../types/Product';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 
 
@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
         )
     }
 
-    const detail: Product | undefined = products.find(product => product.id === id);
+    const detail: ProductWithRelations | undefined = products.find(product => product.id === Number(id));
 
     if (!detail) {
         return (

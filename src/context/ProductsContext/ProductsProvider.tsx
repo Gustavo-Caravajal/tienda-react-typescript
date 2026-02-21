@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react"
 import { ProductsContext } from "./ProductsContext";
-import type { Product } from "../../types/Product";
+import type { ProductWithRelations } from "../../types/Product";
 import { getProducts } from "../../services/products";
 
 type ProductsProviderProps = {
@@ -8,7 +8,7 @@ type ProductsProviderProps = {
 }
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<ProductWithRelations[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {

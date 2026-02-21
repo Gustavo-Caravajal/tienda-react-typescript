@@ -1,12 +1,12 @@
 import { createContext } from "react";
-import type { Product } from "../../types/Product"
+import type { CartItem } from "../../types/Product"
 
 
 export type CartContextType = {
-    cart: Product[];
-    addItem: (item: Product) => void;
-    deleteItem: (id: string) => void;
-    totalItemPrice: (item: Product) => number;
+    cart: CartItem[];
+    addItem: (item: CartItem) => void;
+    deleteItem: (id: number) => void;
+    totalItemPrice: (item: CartItem) => number;
     clearCart: () => void;
     getTotalItems: () => number | undefined;
     total: () => number;

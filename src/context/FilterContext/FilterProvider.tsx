@@ -3,7 +3,7 @@ import { FilterContext, type FilterContextType } from "./FilterContext";
 import { useProductsContext } from "../../context/ProductsContext/useProductsContext"
 import { useParams } from 'react-router-dom'
 import { max, min } from 'mathjs'
-import type { Product } from "../../types/Product";
+import type { ProductWithRelations } from "../../types/Product";
 
 
 
@@ -16,19 +16,19 @@ export const FilterProvider = ({ children }: FilterProviderProps) => {
     const [price, setPrice] = useState<number>(0);
     const { products, loading } = useProductsContext();
     const { category } = useParams<{ category: string }>()
-    let visibleProducts: Product[] = category
+    let visibleProducts: ProductWithRelations[] = category
         ? products
-            .filter(p => p.category.toLowerCase() === category.toLowerCase())
+            .filter(p => p.category.name.toLowerCase() === category.toLowerCase())
 
         : products;
-    const brandArray: string[] = visibleProducts.map(product => product.brand);
+    const brandArray: string[] = visibleProducts.map(product => product.brand.name);
     const uniqueBrands = brandArray.filter((brand, index) => brandArray.indexOf(brand) === index);
     const prices: number[] = visibleProducts.map(product => product.price);
     const minPrice = prices.length ? min(prices) : 0;
     const maxPrice = prices.length ? max(prices) : 0;
 
     visibleProducts = visibleProducts
-        .filter(p => selectedBrands.length === 0 || selectedBrands.includes(p.brand))
+        .filter(p => selectedBrands.length === 0 || selectedBrands.includes(p.brand.name))
         .filter(p => price == maxPrice || p.price < price)
 
     useEffect(() => {

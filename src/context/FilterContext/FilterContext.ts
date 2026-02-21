@@ -1,5 +1,5 @@
 import { createContext, type Dispatch, type SetStateAction } from "react";
-import type { Product } from "../../types/Product";
+import type { ProductWithRelations } from "../../types/Product";
 
 export type FilterContextType = {
     loading: boolean;
@@ -7,7 +7,7 @@ export type FilterContextType = {
     setSelectedBrands: Dispatch<SetStateAction<string[]>>;
     price: number;
     setPrice: Dispatch<SetStateAction<number>>;
-    visibleProducts: Product[];
+    visibleProducts: ProductWithRelations[];
     uniqueBrands: string[];
     minPrice: number;
     maxPrice: number;

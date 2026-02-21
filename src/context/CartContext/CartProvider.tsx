@@ -1,21 +1,23 @@
 import { useState, type ReactNode } from "react"
 import { CartContext } from "./CartContext";
-import type { Product } from "../../types/Product";
+import type { CartItem } from "../../types/Product";
 
 
 type CartProviderProps = {
     children: ReactNode;
 }
 
+
+
 export const CartProvider = ({ children }: CartProviderProps) => {
-    const [cart, setCart] = useState<Product[]>([]);
+    const [cart, setCart] = useState<CartItem[]>([]);
     
-    const exists = (id: string): boolean => {
+    const exists = (id: number): boolean => {
         const exist = cart.some(p => p.id === id);
         return exist;
     }
 
-    const addItem = (item: Product): void => {
+    const addItem = (item: CartItem): void => {
         if (exists(item.id)) {
             const updatedCart = cart.map((prod) => {
                 if (prod.id === item.id) {
@@ -32,7 +34,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         }
     }
 
-    const deleteItem = (id: string): void => {
+    const deleteItem = (id: number): void => {
         const filteredCart = cart.filter(prod => prod.id !== id);
         setCart(filteredCart);
         alert("Producto eliminado")
@@ -47,7 +49,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         return totalItems;
     }
 
-    const totalItemPrice = (item: Product): number => {
+    const totalItemPrice = (item: CartItem): number => {
         const totalItemPrice = item.price * item.quantity
         return Math.round(totalItemPrice * 100)/100;
     }
