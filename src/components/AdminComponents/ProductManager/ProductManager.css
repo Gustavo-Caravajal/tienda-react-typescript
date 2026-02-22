@@ -1,0 +1,19 @@
+
+.product {
+    display: flex;
+    flex-direction: row;
+    width: calc(100%);
+}
+
+.product-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
