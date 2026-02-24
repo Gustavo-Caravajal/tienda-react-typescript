@@ -11,6 +11,7 @@ import { Cart } from './components/Cart/Cart'
 import { BrandManager } from './components/AdminComponents/BrandManager/BrandManager'
 import { CategoryManager } from './components/AdminComponents/CategoryManager/CategoryManager'
 import { ProductManager } from './components/AdminComponents/ProductManager/ProductManager'
+
 function App() {
 
   return (
@@ -23,10 +24,10 @@ function App() {
               <Route path={`/`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
               <Route path={`/category/:category`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
               <Route path={`/detail/:id`} element={<ItemDetailContainer />} />
-              <Route path='/carrito' element={<Cart/>} />
-              <Route path='/brand' element={<BrandManager/>}/>
-              <Route path='/category' element={<CategoryManager/>}/>
-              <Route path='/product' element={<ProductManager/>}/>
+              <Route path='/carrito' element={<Cart />} />
+              <Route path='/brand' element={<BrandManager />} />
+              <Route path='/category' element={<CategoryManager />} />
+              <Route path='/product' element={<ProductManager />} />
             </Routes>
           </ProductsProvider>
           <Footer />

@@ -1,13 +1,26 @@
+import { useState } from 'react';
 import '../../AdminComponents/ManagerLayout.css'
 import './ProductManager.css'
+import { ModalForm } from '../ModalForm/ModalForm';
 
 export const ProductManager = () => {
+    const [ isModalOpen, setIsModalOpen ] = useState<boolean>(false);
+
+    const toggleModal = (): void => {
+        console.log("boton clickeado");
+        setIsModalOpen(!isModalOpen);
+    }
+
+
     return (
         <section className="manager-container">
+            <ModalForm isOpen={isModalOpen} closeModal={() => toggleModal()} title="Añadir producto"/>
             <div className='page'>
                 <div className='page-header'>
                     <h2>Productos</h2>
-                    <button className='add-btn'>
+                    <button
+                        onClick={() => toggleModal()} 
+                        className='add-btn'>
                         + Añadir producto
                     </button>
                 </div>
