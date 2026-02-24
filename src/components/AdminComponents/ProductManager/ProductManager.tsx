@@ -2,9 +2,11 @@ import { useState } from 'react';
 import '../../AdminComponents/ManagerLayout.css'
 import './ProductManager.css'
 import { ModalForm } from '../ModalForm/ModalForm';
+import { ProductFormFields } from '../FormFields/ProductFormFields';
 
 export const ProductManager = () => {
-    const [ isModalOpen, setIsModalOpen ] = useState<boolean>(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [edit, setEdit] = useState(false);
 
     const toggleModal = (): void => {
         console.log("boton clickeado");
@@ -14,12 +16,17 @@ export const ProductManager = () => {
 
     return (
         <section className="manager-container">
-            <ModalForm isOpen={isModalOpen} closeModal={() => toggleModal()} title="Añadir producto"/>
+            {edit ? (
+                <ModalForm isOpen={isModalOpen} closeModal={toggleModal} action={"Editar"} entity="producto" children={<ProductFormFields />} />
+
+            ) : (
+                <ModalForm isOpen={isModalOpen} closeModal={toggleModal} action={"Añadir"} entity="producto" children={<ProductFormFields />} />
+            )}
             <div className='page'>
                 <div className='page-header'>
                     <h2>Productos</h2>
                     <button
-                        onClick={() => toggleModal()} 
+                        onClick={() => {setEdit(false);toggleModal();}}
                         className='add-btn'>
                         + Añadir producto
                     </button>
@@ -61,7 +68,7 @@ export const ProductManager = () => {
                                 </td>
                                 <td className='actions'>
                                     <div className='div-actions'>
-                                        <button className='action-btn'>
+                                        <button onClick={() => { toggleModal(); setEdit(!edit) }} className='action-btn'>
                                             Editar
                                         </button>
                                         <button className='action-btn delete'>

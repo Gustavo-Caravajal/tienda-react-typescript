@@ -63,65 +63,6 @@ div.modal-overlay {
     gap: 0.5rem;
 }
 
-label {
-    color: gray;
-    font-size: small;
-    font-weight: 500;
-}
-
-.input {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid gray;
-    font-size: small;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-}
-
-.select {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 50%;
-    height: auto;
-    gap: 0.5rem;
-}
-
-select,
-.input-number {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: none;
-    border: 1px solid gray;
-    padding: 10px;
-    border-radius: 6px;
-    width: 95%;
-}
-
-select:focus,
-.input-number:focus,
-textarea:focus {
-    outline: none;
-    box-shadow: none;
-    border: 1px solid black;
-}
-
-textarea {
-    width: 100%;
-    border: 1px solid gray;
-    border-radius: 10px;
-    height: 89px;
-    padding: 10px;
-    font-size: small;
-}
-
 .action-buttons {
     display: flex;
     width: 100%;
@@ -142,6 +83,7 @@ textarea {
     border: 0px;
     cursor: pointer;
     margin-top: auto;
+    border: 1px solid gray;
 }
 
 .admin-action-btn:hover{
