@@ -1,10 +1,13 @@
 import './FormFields.css'
 
+type CategoryFormFieldsProps = {
+    handleChange: (e:React.ChangeEvent<HTMLInputElement>) => void
+}
 
-export const CategoryFormFields = () => {
+export const CategoryFormFields = ({handleChange}:CategoryFormFieldsProps) => {
 
     return <>
         <label>NOMBRE DE LA CATEGORIA</label>
-        <input className='input' type="text" placeholder={"Ej: Smartphone, Tablet"} />
+        <input name='name' onChange={handleChange} className='input' type="text" placeholder={"Ej: Smartphone, Tablet"} />
     </>
 }

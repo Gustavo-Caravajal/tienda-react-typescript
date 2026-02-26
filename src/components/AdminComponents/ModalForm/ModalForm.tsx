@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, SyntheticEvent } from 'react';
 import './ModalForm.css'
 
 
@@ -7,11 +7,11 @@ type ModalFormProps = {
     closeModal: () => void;
     action: string;
     entity: string;
-    //onSubmit: React.ComponentProps<"form">["onSubmit"];
+    handleSubmit?: (e: SyntheticEvent<HTMLFormElement>) => Promise<void>;
     children: ReactNode;
 }
 
-export const ModalForm = ({ isOpen, closeModal, action, entity , children }: ModalFormProps) => {
+export const ModalForm = ({ isOpen, closeModal, action, entity , handleSubmit, children }: ModalFormProps) => {
 
     if (!isOpen) {
         return null;
@@ -25,7 +25,7 @@ export const ModalForm = ({ isOpen, closeModal, action, entity , children }: Mod
                     <button className='close-btn' onClick={closeModal}>×</button>
                 </div>
                 <div className="modal-body">
-                    <form className='form'>
+                    <form onSubmit={handleSubmit} className='form'>
                         {children}
                         <div className='action-buttons'>
                             <button
