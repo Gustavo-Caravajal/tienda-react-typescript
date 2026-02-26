@@ -3,7 +3,7 @@ import '../../AdminComponents/ManagerLayout.css'
 import { CategoryFormFields } from '../FormFields/CategoryFormFields';
 import { ModalForm } from '../ModalForm/ModalForm';
 import type { Category, CreateCategory } from '../../../types/Category';
-import { createCategory, getCategories } from '../../../services/categories';
+import { createCategory, getCategories, deleteCategory, updateCategory } from '../../../services/categories';
 
 
 export const CategoryManager = () => {
@@ -11,7 +11,7 @@ export const CategoryManager = () => {
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [newCategory, setNewCategory] = useState<CreateCategory>({ name: "" });
-
+    const [editingId, setEditingId] = useState<number | null>(null);
     const toggleModal = (): void => {
         console.log("boton clickeado");
         setIsModalOpen(!isModalOpen);
@@ -25,15 +25,35 @@ export const CategoryManager = () => {
     const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         try {
-            await createCategory(newCategory);
+            if (editingId !== null) {
+                await updateCategory(editingId,newCategory.name)
+
+            } else {
+                await createCategory(newCategory);
+            }
+
             const data = await getCategories();
             setCategories(data);
             setNewCategory({ name: "" });
+            setEditingId(null);
             setIsModalOpen(false);
         } catch (error) {
             console.log(error);
         }
     }
+
+    const deleteCategoryById = async (id: number): Promise<void> => {
+        try {
+            await deleteCategory(id);
+            const data = await getCategories();
+            setCategories(data);
+            setIsModalOpen(false);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
 
     useEffect(() => {
         const fetchCategories = async (): Promise<void> => {
@@ -55,14 +75,14 @@ export const CategoryManager = () => {
             <ModalForm
                 isOpen={isModalOpen}
                 closeModal={() => toggleModal()}
-                action={"Añadir"}
+                action={editingId !== null ? "Editar" : "Añadir"}
                 entity="categoria"
                 handleSubmit={handleSubmit}
-                children={<CategoryFormFields handleChange={handleChange} />} />
+                children={<CategoryFormFields handleChange={handleChange} value={newCategory.name}/>} />
             <div className='page'>
                 <div className='page-header'>
                     <h2>Categorias</h2>
-                    <button onClick={toggleModal} className='add-btn'>
+                    <button onClick={() => {toggleModal(); setEditingId(null);}} className='add-btn'>
                         + Añadir categoria
                     </button>
                 </div>
@@ -95,10 +115,16 @@ export const CategoryManager = () => {
                                         </td>
                                         <td className='actions'>
                                             <div className='div-actions'>
-                                                <button onClick={toggleModal} className='action-btn'>
+                                                <button
+                                                    onClick={() => {
+                                                        toggleModal();
+                                                        setEditingId(category.id);
+                                                        setNewCategory({ name: category.name })
+                                                    }}
+                                                    className='action-btn'>
                                                     Editar
                                                 </button>
-                                                <button className='action-btn delete'>
+                                                <button onClick={() => deleteCategoryById(category.id)} className='action-btn delete'>
                                                     Eliminar
                                                 </button>
                                             </div>

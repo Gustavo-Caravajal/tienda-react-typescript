@@ -30,3 +30,25 @@ export const createCategory = async (category: Omit<Category, "id">): Promise<Ca
     
     return data;
 }
+
+export const deleteCategory = async (id: number): Promise<void> => {
+    const { error } = await supabase
+        .from("categories")
+        .delete()
+        .eq("id", id);
+
+    if(error){
+        throw new Error(`Error deleting category: ${error.message}`);
+    }    
+}
+
+export const updateCategory = async (id: number | null, newValue: string): Promise<void> => {
+    const { error } = await supabase
+        .from("categories")
+        .update({name: newValue})
+        .eq("id", id);
+
+    if(error){
+        throw new Error(`Error deleting category: ${error.message}`);
+    }    
+}
