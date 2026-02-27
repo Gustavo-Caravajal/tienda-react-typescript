@@ -47,8 +47,7 @@ export const updateCategory = async (id: number | null, newValue: string): Promi
         .from("categories")
         .update({name: newValue})
         .eq("id", id);
-
     if(error){
-        throw new Error(`Error deleting category: ${error.message}`);
+        throw new Error(`Error updating category: ${error.message}`);
     }    
 }

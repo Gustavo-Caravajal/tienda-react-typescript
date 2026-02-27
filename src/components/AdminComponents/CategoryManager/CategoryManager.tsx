@@ -12,26 +12,36 @@ export const CategoryManager = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [newCategory, setNewCategory] = useState<CreateCategory>({ name: "" });
     const [editingId, setEditingId] = useState<number | null>(null);
-    const toggleModal = (): void => {
-        console.log("boton clickeado");
-        setIsModalOpen(!isModalOpen);
+
+    //const toggleModal = (): void => {
+    //    console.log("boton clickeado");
+    //    setIsModalOpen(!isModalOpen);
+    //}
+
+    const openModal = (): void => {
+        setIsModalOpen(true);
+    }
+
+    const closeModal = (): void => {
+        setIsModalOpen(false);
+        setEditingId(null);
+        setNewCategory({ name: "" });
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        const { name, value } = e.target
-        setNewCategory((prev) => ({ ...prev, [name]: value }))
+        const { name, value } = e.target;
+        setNewCategory((prev) => ({ ...prev, [name]: value }));
     }
 
     const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         try {
             if (editingId !== null) {
-                await updateCategory(editingId,newCategory.name)
+                await updateCategory(editingId, newCategory.name);
 
             } else {
                 await createCategory(newCategory);
             }
-
             const data = await getCategories();
             setCategories(data);
             setNewCategory({ name: "" });
@@ -53,8 +63,6 @@ export const CategoryManager = () => {
         }
     }
 
-
-
     useEffect(() => {
         const fetchCategories = async (): Promise<void> => {
             try {
@@ -74,15 +82,15 @@ export const CategoryManager = () => {
         <section className="manager-container">
             <ModalForm
                 isOpen={isModalOpen}
-                closeModal={() => toggleModal()}
+                closeModal={() => closeModal()}
                 action={editingId !== null ? "Editar" : "Añadir"}
                 entity="categoria"
                 handleSubmit={handleSubmit}
-                children={<CategoryFormFields handleChange={handleChange} value={newCategory.name}/>} />
+                children={<CategoryFormFields handleChange={handleChange} value={newCategory.name} />} />
             <div className='page'>
                 <div className='page-header'>
                     <h2>Categorias</h2>
-                    <button onClick={() => {toggleModal(); setEditingId(null);}} className='add-btn'>
+                    <button onClick={() => { openModal(); setEditingId(null); }} className='add-btn'>
                         + Añadir categoria
                     </button>
                 </div>
@@ -104,34 +112,37 @@ export const CategoryManager = () => {
                                 <tr>
                                     <td colSpan={3}>No hay productos</td>
                                 </tr>
-                            ) : (<>
-                                {categories.map((category) => (
-                                    <tr key={category.id}>
-                                        <td>
-                                            #{category.id}
-                                        </td>
-                                        <td>
-                                            {category.name}
-                                        </td>
-                                        <td className='actions'>
-                                            <div className='div-actions'>
-                                                <button
-                                                    onClick={() => {
-                                                        toggleModal();
-                                                        setEditingId(category.id);
-                                                        setNewCategory({ name: category.name })
-                                                    }}
-                                                    className='action-btn'>
-                                                    Editar
-                                                </button>
-                                                <button onClick={() => deleteCategoryById(category.id)} className='action-btn delete'>
-                                                    Eliminar
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </>
+                            ) : (
+                                <>
+                                    {categories.map((category) => (
+                                        <tr key={category.id}>
+                                            <td>
+                                                #{category.id}
+                                            </td>
+                                            <td>
+                                                {category.name}
+                                            </td>
+                                            <td className='actions'>
+                                                <div className='div-actions'>
+                                                    <button
+                                                        onClick={() => {
+                                                            setEditingId(category.id);
+                                                            setNewCategory({ name: category.name });
+                                                            openModal();
+                                                        }}
+                                                        className='action-btn'>
+                                                        Editar
+                                                    </button>
+                                                    <button
+                                                        onClick={() => deleteCategoryById(category.id)}
+                                                        className='action-btn delete'>
+                                                        Eliminar
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </>
                             )}
                         </tbody>
                     </table>
