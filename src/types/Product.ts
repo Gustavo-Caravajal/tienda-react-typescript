@@ -12,6 +12,16 @@ export type Product = {
     stock: number;
 }
 
+export type CreateProduct = {
+    name: string;
+    brand_id: number;
+    category_id: number;
+    price: number;
+    description: string;
+    imageUrl: string;
+    stock: number;
+}
+
 export type ProductWithRelations = Product & {
     brand: Brand;
     category: Category;
@@ -20,3 +30,4 @@ export type ProductWithRelations = Product & {
 export type CartItem = ProductWithRelations & {
     quantity: number;
 }
+

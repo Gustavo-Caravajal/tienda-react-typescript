@@ -1,5 +1,5 @@
 import { supabase } from "../supabase-client";
-import type { Product, ProductWithRelations } from "../types/Product";
+import type { CreateProduct, Product, ProductWithRelations } from "../types/Product";
 
 export const getProducts = async (): Promise<ProductWithRelations[]> => {
     const { data, error } = await supabase
@@ -33,5 +33,27 @@ export const createProduct = async (product: Omit<Product, "id">): Promise<Produ
     }
 
     return data;
+}
+
+export const deleteProduct = async (id: number): Promise<void> => {
+    const { error } = await supabase
+        .from("products")
+        .delete()
+        .eq("id", id);
+
+    if (error) {
+        throw new Error(`Error deleting product: ${error.message}`);
+    }
+}
+
+export const updateProduct = async (id: number | null, newValue: CreateProduct): Promise<void> => {
+    const { error } = await supabase
+        .from("products")
+        .update({ ...newValue })
+        .eq("id", id);
+
+    if (error) {
+        throw new Error(`Error updating product: ${error.message}`);
+    }
 }
 

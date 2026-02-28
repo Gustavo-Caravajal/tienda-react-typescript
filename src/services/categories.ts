@@ -10,7 +10,7 @@ export const getCategories = async (): Promise<Category[]> => {
             { ascending: true }
         );
 
-    if(error){
+    if (error) {
         throw new Error(`Error getting categories: ${error.message}`);
     }
 
@@ -24,10 +24,10 @@ export const createCategory = async (category: Omit<Category, "id">): Promise<Ca
         .select()
         .single();
 
-    if(error){
+    if (error) {
         throw new Error(`Error creating category: ${error.message}`);
     }
-    
+
     return data;
 }
 
@@ -37,17 +37,18 @@ export const deleteCategory = async (id: number): Promise<void> => {
         .delete()
         .eq("id", id);
 
-    if(error){
+    if (error) {
         throw new Error(`Error deleting category: ${error.message}`);
-    }    
+    }
 }
 
-export const updateCategory = async (id: number | null, newValue: string): Promise<void> => {
+export const updateCategory = async (id: number, newValue: string): Promise<void> => {
     const { error } = await supabase
         .from("categories")
-        .update({name: newValue})
+        .update({ name: newValue })
         .eq("id", id);
-    if(error){
+
+    if (error) {
         throw new Error(`Error updating category: ${error.message}`);
-    }    
+    }
 }

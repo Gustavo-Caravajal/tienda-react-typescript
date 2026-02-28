@@ -110,7 +110,7 @@ export const CategoryManager = () => {
                                 </tr>
                             ) : categories.length === 0 ? (
                                 <tr>
-                                    <td colSpan={3}>No hay productos</td>
+                                    <td colSpan={3}>No hay categorias</td>
                                 </tr>
                             ) : (
                                 <>

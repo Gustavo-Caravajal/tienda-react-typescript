@@ -41,12 +41,12 @@ export const deleteBrand = async (id: number): Promise<void> => {
     }
 }
 
-export const updateBrandById = async (id: number | null, newValue: string) => {
+export const updateBrandById = async (id: number, newValue: string) => {
     const { error } = await supabase
         .from("brands")
         .update({ name: newValue })
         .eq("id", id);
-    if(error){
+    if (error) {
         throw new Error(`Error updating brand: ${error.message}`);
     }
 }
