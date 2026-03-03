@@ -14,12 +14,12 @@ export type Product = {
 
 export type CreateProduct = {
     name: string;
-    brand_id: number;
-    category_id: number;
-    price: number;
+    brand_id: number | null;
+    category_id: number | null;
+    price: number | null;
     description: string;
     imageUrl: string;
-    stock: number;
+    stock: number | null;
 }
 
 export type ProductWithRelations = Product & {
