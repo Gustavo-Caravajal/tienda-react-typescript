@@ -21,7 +21,7 @@ export const ItemDetail = ({ detail }: ItemDetailProps) => {
         category={detail.category.name}
         price={detail.price}
         description={detail.description}
-        imageUrl={detail.imageUrl}
+        imageUrl={detail.image_url}
         children={<Count btnText="Agregar al carrito" onConfirm={handleAdd}/>}
     />
 }

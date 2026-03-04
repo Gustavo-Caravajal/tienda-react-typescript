@@ -18,8 +18,8 @@ export const ItemList = ({ list }: ItemListProps) => {
                     brand={product.brand.name}
                     price={product.price}
                     description={product.description}
-                    imageUrl={product.imageUrl}
-                    children={<Button texto="Ver producto" color="rgb(247, 244, 205)" />} 
+                    imageUrl={product.image_url}
+                    children={<Button  texto="Ver producto" color="rgb(247, 244, 205)" />} 
                 />
             ))}
         </>

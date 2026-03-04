@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-label.form-label {
+.filter-label {
     align-self: center;
 }
 

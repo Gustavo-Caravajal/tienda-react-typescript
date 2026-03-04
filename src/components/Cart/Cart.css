@@ -33,13 +33,25 @@
     border-bottom: 1px solid rgb(196, 195, 181);
 }
 
-.delete-icon {
-    cursor: pointer;
+p.delete-icon {
     width: 32px;
     height: 32px;
 }
 
-.product {
+img.delete-icon {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+h4.product-text{
+    font-size: medium;
+    font-weight: bold;
+}
+
+div.product,
+p.product {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -109,14 +121,17 @@
     .product-info {
         text-align: center;
         width: auto;
+        gap: 0.5rem;
     }
 
-    .product {
+    div.product {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
     }
 
+    
     .cart-item {
         flex-direction: column;
         align-items: center;

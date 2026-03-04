@@ -15,7 +15,7 @@ type ProductFormFieldsProps = {
 export const ProductFormFields = ({ handleChange, handleFileChange, product, brands, categories }: ProductFormFieldsProps) => {
 
     return <>
-        <label>NOMBRE</label>
+        <label className='lbl'>NOMBRE</label>
         <input
             onChange={handleChange}
             name='name'
@@ -26,8 +26,9 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
             placeholder='Nombre del producto' />
         <div className='input-container'>
             <div className='select'>
-                <label>MARCA</label>
+                <label className='lbl'>MARCA</label>
                 <select
+                    className='slct'
                     onChange={handleChange}
                     name="brand_id"
                     value={product.brand_id ?? ""}
@@ -43,8 +44,9 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                 </select>
             </div>
             <div className='select'>
-                <label>CATEGORIA</label>
+                <label className='lbl'>CATEGORIA</label>
                 <select
+                    className='slct'
                     onChange={handleChange}
                     name="category_id"
                     value={product.category_id ?? ""}
@@ -60,7 +62,7 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
         </div >
         <div className='input-container'>
             <div className='select'>
-                <label>PRECIO ($)</label>
+                <label className='lbl'>PRECIO ($)</label>
                 <input
                     onChange={handleChange}
                     name='price'
@@ -72,7 +74,7 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     min={0} />
             </div>
             <div className='select'>
-                <label>STOCK</label>
+                <label className='lbl'>STOCK</label>
                 <input
                     onChange={handleChange}
                     name='stock'
@@ -84,15 +86,15 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     min={0} />
             </div>
         </div>
-        <label >DESCRIPCION</label>
-        <textarea 
-            onChange={handleChange} 
-            name='description' 
-            value={product.description} 
-            className='description' 
+        <label className='lbl' >DESCRIPCION</label>
+        <textarea
+            onChange={handleChange}
+            name='description'
+            value={product.description}
+            className='description'
             required
             placeholder='Descripcion del producto'></textarea>
-        <label>IMAGEN</label>
+        <label className='lbl'>IMAGEN</label>
         <input onChange={handleFileChange} className='input-file' type="file" accept="image/*" />
     </>
 }

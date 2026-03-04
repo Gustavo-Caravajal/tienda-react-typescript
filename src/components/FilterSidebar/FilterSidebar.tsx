@@ -17,7 +17,7 @@ export const FilterSidebar = () => {
        
     return (
         <div className='filter-container'>
-            <h3>Filtros</h3>
+            <h3 className='filter-label'>Filtros</h3>
             <Form className='filter-form'>
                 <Form.Label>Precio: ${price}</Form.Label>
                 <Form.Range

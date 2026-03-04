@@ -8,7 +8,7 @@ export type Product = {
     category_id: number;
     price: number;
     description: string;
-    imageUrl: string;
+    image_url: string;
     stock: number;
 }
 
@@ -18,7 +18,7 @@ export type CreateProduct = {
     category_id: number | null;
     price: number | null;
     description: string;
-    imageUrl: string;
+    image_url: string;
     stock: number | null;
 }
 

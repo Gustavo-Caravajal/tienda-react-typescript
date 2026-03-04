@@ -1,7 +1,7 @@
 import { supabase } from "../supabase-client";
 
 export const uploadImage = async (file: File): Promise<string> => {
-  const filePath = `${file.name}-${Date.now()}`
+  const filePath = `public/${file.name}-${Date.now()}`
   
   const { error } = await supabase.storage
     .from("products-images")

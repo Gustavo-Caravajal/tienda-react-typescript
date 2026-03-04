@@ -13,13 +13,14 @@ export const Cart = () => {
                         <p className='product'>Producto</p>
                         <p className='quantity-text'>Cantidad</p>
                         <p className='total-text'>Total</p>
+                        <p className='delete-icon'></p>
                     </div>
                     {cart.map((item => (
                         <div className="cart-item">
                             <div className='product'>
                                 <img
                                     className="product-img"
-                                    src={item.imageUrl}
+                                    src={item.image_url}
                                     alt={item.name}
                                 />
                                 <div className="product-info">

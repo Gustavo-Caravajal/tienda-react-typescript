@@ -1,5 +1,5 @@
 
-label {
+.lbl {
     color: gray;
     font-size: small;
     font-weight: 500;
@@ -29,7 +29,7 @@ label {
     gap: 0.5rem;
 }
 
-select,
+.slct,
 .input-number {
     appearance: none;
     -webkit-appearance: none;
