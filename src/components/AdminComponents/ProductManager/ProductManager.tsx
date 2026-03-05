@@ -12,6 +12,7 @@ import { getCategories } from '../../../services/categories';
 import type { Category } from '../../../types/Category';
 
 
+
 export const ProductManager = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [products, setProducts] = useState<ProductWithRelations[]>([]);
@@ -163,7 +164,7 @@ export const ProductManager = () => {
 
             <div className='page'>
                 <div className='page-header'>
-                    <h2 >Productos</h2>
+                    <h4 className='page-header-title' >Productos</h4>
                     <button
                         onClick={openModal}
                         className='add-btn'>
@@ -213,7 +214,7 @@ export const ProductManager = () => {
                                             {prod.price}
                                         </td>
                                         <td>
-                                            {prod.stock} u
+                                            {prod.stock} u.
                                         </td>
                                         <td className='actions'>
                                             <div className='div-actions'>

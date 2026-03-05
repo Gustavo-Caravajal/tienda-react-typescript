@@ -23,8 +23,11 @@
     margin-bottom: 1rem;
 }
 
-.brand-manager-container h2 {
-    font-weight: 650;
+
+
+h2.page-header-title {
+    font-weight: bold;
+
 }
 
 .add-btn {

@@ -1,0 +1,67 @@
+.admin-panel-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid rgb(182, 179, 179);
+}
+
+.nav-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: auto;
+    height: auto;
+    gap: 1rem;
+}
+
+.nav-title {
+    font-size: medium;
+    font-weight: 500;
+    color: rgb(61, 61, 61);
+}
+
+.user-type {
+    padding: 0.125rem 0.5rem;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    font-size: small;
+}
+
+.admin-panel-options {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 3rem;
+    gap: 1rem;
+}
+
+.admin-panel-option {
+    color: rgb(61, 61, 61);
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+
+}
+
+.admin-panel-option:hover{
+    border: 1px solid rgb(187, 187, 187);
+    background-color: rgb(187, 187, 187);
+}
+
+.admin-panel-option.active{
+    background-color: black;
+    color: white;
+    border: none;
+}

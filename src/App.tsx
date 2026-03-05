@@ -10,7 +10,7 @@ import { CartProvider } from './context/CartContext/CartProvider'
 import { Cart } from './components/Cart/Cart'
 import { BrandManager } from './components/AdminComponents/BrandManager/BrandManager'
 import { CategoryManager } from './components/AdminComponents/CategoryManager/CategoryManager'
-import { ProductManager } from './components/AdminComponents/ProductManager/ProductManager'
+import { AdminPanelNav } from './components/AdminComponents/AdminPanelNav/AdminPanelNav'
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
     <>
       <BrowserRouter >
         <CartProvider>
-          <Header />
+          {/*<Header />*/}
           <ProductsProvider>
             <Routes>
               <Route path={`/`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
@@ -27,7 +27,7 @@ function App() {
               <Route path='/carrito' element={<Cart />} />
               <Route path='/brand' element={<BrandManager />} />
               <Route path='/category' element={<CategoryManager />} />
-              <Route path='/product' element={<ProductManager />} />
+              <Route path='/product' element={<AdminPanelNav/>} />
             </Routes>
           </ProductsProvider>
           <Footer />
