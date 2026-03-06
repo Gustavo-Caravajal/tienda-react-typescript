@@ -18,3 +18,8 @@
     flex: 1;
 }
 
+.product-info > p{
+    display: inline-block;
+    white-space: nowrap;
+}
+

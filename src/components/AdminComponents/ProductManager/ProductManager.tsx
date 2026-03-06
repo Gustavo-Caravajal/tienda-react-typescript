@@ -73,7 +73,7 @@ export const ProductManager = () => {
             return;
         }
         try {
-            let imageUrl: string = "";
+            let imageUrl: string = newProduct.image_url;
 
             if (productImage) {
                 imageUrl = await uploadImage(productImage);
@@ -197,7 +197,7 @@ export const ProductManager = () => {
                                     <tr key={prod.id}>
                                         <td>
                                             <div className='product'>
-                                                <img className='product-img' src="/images/iphone-15-pro.png" alt="descripcion" />
+                                                <img className='product-img' src={prod.image_url} alt="descripcion" />
                                                 <div className='product-info'>
                                                     <p>{prod.brand.name} {prod.name}</p>
                                                     <p>ID #{prod.id}</p>

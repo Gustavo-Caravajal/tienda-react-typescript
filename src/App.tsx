@@ -11,6 +11,7 @@ import { Cart } from './components/Cart/Cart'
 import { BrandManager } from './components/AdminComponents/BrandManager/BrandManager'
 import { CategoryManager } from './components/AdminComponents/CategoryManager/CategoryManager'
 import { AdminPanelNav } from './components/AdminComponents/AdminPanelNav/AdminPanelNav'
+import { Login } from './components/Login/Login'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
               <Route path='/brand' element={<BrandManager />} />
               <Route path='/category' element={<CategoryManager />} />
               <Route path='/product' element={<AdminPanelNav/>} />
+              <Route path='/login' element={<Login/>}/>
             </Routes>
           </ProductsProvider>
           <Footer />
