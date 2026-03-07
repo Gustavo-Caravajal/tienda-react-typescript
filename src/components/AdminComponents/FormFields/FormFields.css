@@ -17,6 +17,7 @@
     flex-direction: row;
     width: 100%;
     height: auto;
+    gap: 1rem;
 }
 
 .select {
@@ -36,7 +37,7 @@
     -moz-appearance: none;
     background: none;
     border: 1px solid gray;
-    padding: 10px;
+    padding: 5px;
     border-radius: 6px;
     width: 95%;
 }
@@ -57,4 +58,9 @@ textarea {
     height: 89px;
     padding: 10px;
     font-size: small;
+}
+
+.error{
+    font-size: small;
+    color: rgb(241, 65, 65);
 }

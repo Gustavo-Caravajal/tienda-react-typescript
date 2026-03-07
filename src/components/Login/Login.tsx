@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Login.css'
-import { useNavigate, type NavigateFunction } from "react-router-dom";
+import { Navigate, useNavigate, type NavigateFunction } from "react-router-dom";
 import { supabase } from "../../supabase-client";
 type User = {
     email: string;
@@ -8,13 +8,32 @@ type User = {
 }
 
 export const Login = () => {
+    const [user, setUser] = useState<any>(null);
+    const [loading, setLoading] = useState<boolean>(true);
     const [userForm, setUserForm] = useState<User>({
         email: "",
         password: ""
     });
 
+    useEffect(() => {
+        const checkUser = async () => {
+            const { data } = await supabase.auth.getUser();
+            setUser(data.user);
+            setLoading(false);
+        }
+        checkUser();
+    }, [])
+
+
     const navigate: NavigateFunction = useNavigate();
 
+    if(loading){
+        return null;
+    }
+
+    if (user) {
+        return <Navigate to={"/admin/alta-productos"} />
+    }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setUserForm({ ...userForm, [name]: value });
@@ -33,7 +52,7 @@ export const Login = () => {
                 email: "",
                 password: ""
             });
-        } else{
+        } else {
             navigate("/admin/alta-productos");
         }
 
@@ -51,7 +70,7 @@ export const Login = () => {
                     <label className="login-form-label">USUARIO</label>
                     <input
                         className="login-form-input"
-                        type="text"
+                        type="email"
                         name="email"
                         value={userForm.email}
                         onChange={handleChange}

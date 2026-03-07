@@ -6,3 +6,7 @@ export type Brand = {
 export type CreateBrand ={
     name: string;
 }
+
+export type BrandErrors = {
+    name: string;
+}

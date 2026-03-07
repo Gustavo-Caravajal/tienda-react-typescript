@@ -31,3 +31,12 @@ export type CartItem = ProductWithRelations & {
     quantity: number;
 }
 
+export type ProductErrors = {
+    name: string;
+    brand: string;
+    category: string;
+    price: string;
+    stock: string;
+    description: string;
+    file: string;
+}

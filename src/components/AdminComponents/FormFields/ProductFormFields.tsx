@@ -1,6 +1,6 @@
 import type { Brand } from '../../../types/Brand';
 import type { Category } from '../../../types/Category';
-import type { CreateProduct } from '../../../types/Product';
+import type { CreateProduct, ProductErrors } from '../../../types/Product';
 import './FormFields.css'
 
 
@@ -10,9 +10,10 @@ type ProductFormFieldsProps = {
     product: CreateProduct;
     brands: Brand[];
     categories: Category[];
+    errors: ProductErrors;
 }
 
-export const ProductFormFields = ({ handleChange, handleFileChange, product, brands, categories }: ProductFormFieldsProps) => {
+export const ProductFormFields = ({ handleChange, handleFileChange, product, brands, categories, errors }: ProductFormFieldsProps) => {
 
     return <>
         <label className='lbl'>NOMBRE</label>
@@ -22,8 +23,9 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
             value={product.name}
             className='input'
             type="text"
-            required
-            placeholder='Nombre del producto' />
+            placeholder='Nombre del producto'
+        />
+        {errors.name && <p className='error'>{errors.name}</p>}
         <div className='input-container'>
             <div className='select'>
                 <label className='lbl'>MARCA</label>
@@ -32,7 +34,6 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     onChange={handleChange}
                     name="brand_id"
                     value={product.brand_id ?? ""}
-                    required
                 >
                     <option value="">Seleccionar</option>
                     {brands.map(brand => (
@@ -42,6 +43,7 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     ))
                     }
                 </select>
+                {errors.brand && <p className='error'>{errors.brand}</p>}
             </div>
             <div className='select'>
                 <label className='lbl'>CATEGORIA</label>
@@ -50,7 +52,7 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     onChange={handleChange}
                     name="category_id"
                     value={product.category_id ?? ""}
-                    required>
+                >
                     <option value="">Seleccionar</option>
                     {categories.map(category => (
                         <option key={category.id} value={category.id}>
@@ -58,6 +60,7 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                         </option>))
                     }
                 </select>
+                {errors.category && <p className='error'>{errors.category}</p>}
             </div>
         </div >
         <div className='input-container'>
@@ -69,9 +72,10 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     value={product.price ?? ""}
                     className='input-number'
                     type="number"
-                    required
                     placeholder='0'
-                    min={0} />
+                    min={0}
+                />
+                {errors.price && <p className='error'>{errors.price}</p>}
             </div>
             <div className='select'>
                 <label className='lbl'>STOCK</label>
@@ -81,9 +85,10 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
                     value={product.stock ?? ""}
                     className='input-number'
                     type="number"
-                    required
                     placeholder='0'
-                    min={0} />
+                    min={0}
+                />
+                {errors.stock && <p className='error'>{errors.stock}</p>}
             </div>
         </div>
         <label className='lbl' >DESCRIPCION</label>
@@ -92,9 +97,10 @@ export const ProductFormFields = ({ handleChange, handleFileChange, product, bra
             name='description'
             value={product.description}
             className='description'
-            required
             placeholder='Descripcion del producto'></textarea>
+        {errors.description && <p className='error'>{errors.description}</p>}
         <label className='lbl'>IMAGEN</label>
         <input onChange={handleFileChange} className='input-file' type="file" accept="image/*" />
+        {errors.file && <p className='error'>{errors.file}</p>}
     </>
 }

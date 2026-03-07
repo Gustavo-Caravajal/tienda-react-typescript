@@ -2,8 +2,9 @@ import React, { useEffect, useState, type SyntheticEvent } from 'react';
 import '../../AdminComponents/ManagerLayout.css'
 import { CategoryFormFields } from '../FormFields/CategoryFormFields';
 import { ModalForm } from '../ModalForm/ModalForm';
-import type { Category, CreateCategory } from '../../../types/Category';
+import type { Category, CategoryErrors, CreateCategory } from '../../../types/Category';
 import { createCategory, getCategories, deleteCategory, updateCategory } from '../../../services/categories';
+import { validatecategories } from '../../../utils/validateCategories';
 
 
 export const CategoryManager = () => {
@@ -12,7 +13,7 @@ export const CategoryManager = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [newCategory, setNewCategory] = useState<CreateCategory>({ name: "" });
     const [editingId, setEditingId] = useState<number | null>(null);
-
+    const [errors, setErrors] = useState<CategoryErrors>({ name: "" });
     //const toggleModal = (): void => {
     //    console.log("boton clickeado");
     //    setIsModalOpen(!isModalOpen);
@@ -35,6 +36,14 @@ export const CategoryManager = () => {
 
     const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
+        setErrors({ name: "" });
+        const newErrors: CategoryErrors = validatecategories(newCategory);
+        const hasErrors = Object.values(newErrors).some(error => error !== "")
+        if (hasErrors) {
+            setErrors(newErrors);
+            setLoading(false);
+            return;
+        }
         try {
             if (editingId !== null) {
                 await updateCategory(editingId, newCategory.name);
@@ -44,6 +53,7 @@ export const CategoryManager = () => {
             }
             const data = await getCategories();
             setCategories(data);
+            setErrors({ name: "" });
             setNewCategory({ name: "" });
             setEditingId(null);
             setIsModalOpen(false);
@@ -86,11 +96,17 @@ export const CategoryManager = () => {
                 action={editingId !== null ? "Editar" : "Añadir"}
                 entity="categoria"
                 handleSubmit={handleSubmit}
-                children={<CategoryFormFields handleChange={handleChange} value={newCategory.name} />} />
+                children={<CategoryFormFields handleChange={handleChange} value={newCategory.name} errors={errors} />} />
             <div className='page'>
                 <div className='page-header'>
                     <h2>Categorias</h2>
-                    <button onClick={() => { openModal(); setEditingId(null); }} className='add-btn'>
+                    <button
+                        onClick={() => {
+                            openModal();
+                            setEditingId(null);                            
+                            setErrors({name: ""});
+                        }}
+                        className='add-btn'>
                         + Añadir categoria
                     </button>
                 </div>

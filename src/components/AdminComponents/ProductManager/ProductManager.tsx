@@ -3,13 +3,14 @@ import '../../AdminComponents/ManagerLayout.css'
 import './ProductManager.css'
 import { ModalForm } from '../ModalForm/ModalForm';
 import { ProductFormFields } from '../FormFields/ProductFormFields';
-import type { CreateProduct, ProductWithRelations } from '../../../types/Product';
+import type { CreateProduct, ProductErrors, ProductWithRelations } from '../../../types/Product';
 import { uploadImage } from '../../../services/uploadImage';
 import { createProduct, deleteProduct, getProducts, updateProduct } from '../../../services/products';
 import type { Brand } from '../../../types/Brand';
 import { getBrands } from '../../../services/brands';
 import { getCategories } from '../../../services/categories';
 import type { Category } from '../../../types/Category';
+import { validateProducts } from '../../../utils/validateProduct';
 
 
 
@@ -21,6 +22,15 @@ export const ProductManager = () => {
     const [editingId, setEditingId] = useState<number | null>(null);
     const [brands, setBrands] = useState<Brand[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);
+    const [errors, setErrors] = useState<ProductErrors>({
+        name: "",
+        brand: "",
+        category: "",
+        price: "",
+        stock: "",
+        description: "",
+        file: ""
+    })
     const [newProduct, setNewProduct] = useState<CreateProduct>({
         name: "",
         brand_id: null,
@@ -61,7 +71,22 @@ export const ProductManager = () => {
 
     const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
-
+        setErrors({
+            name: "",
+            brand: "",
+            category: "",
+            price: "",
+            stock: "",
+            description: "",
+            file: ""
+        });
+        const newErrors: ProductErrors = validateProducts(newProduct);
+        const hasErrors: boolean = Object.values(newErrors).some(error => error !== "");
+        if (hasErrors) {
+            setErrors(newErrors);
+            setLoading(false)
+            return;
+        }
 
         if (
             newProduct.brand_id === null ||
@@ -99,6 +124,15 @@ export const ProductManager = () => {
         const data = await getProducts();
         setProducts(data);
         setEditingId(null);
+        setErrors({
+            name: "",
+            brand: "",
+            category: "",
+            price: "",
+            stock: "",
+            description: "",
+            file: ""
+        })
         setNewProduct({
             name: "",
             brand_id: null,
@@ -142,8 +176,6 @@ export const ProductManager = () => {
         fetchProduct();
     }, [])
 
-
-
     return (
         <section className="manager-container">
             <ModalForm
@@ -159,6 +191,7 @@ export const ProductManager = () => {
                         product={newProduct}
                         brands={brands}
                         categories={categories}
+                        errors={errors}
                     />}
             />
 
@@ -166,7 +199,29 @@ export const ProductManager = () => {
                 <div className='page-header'>
                     <h4 className='page-header-title' >Productos</h4>
                     <button
-                        onClick={openModal}
+                        onClick={() => {
+                            openModal();
+                            setEditingId(null);
+                            setErrors({
+                                name: "",
+                                brand: "",
+                                category: "",
+                                price: "",
+                                stock: "",
+                                description: "",
+                                file: ""
+                            });
+                            setNewProduct({
+                                name: "",
+                                brand_id: null,
+                                category_id: null,
+                                price: null,
+                                description: "",
+                                image_url: "",
+                                stock: null
+                            });
+                            setProductImage(null);
+                        }}
                         className='add-btn'>
                         + Añadir producto
                     </button>
@@ -234,7 +289,6 @@ export const ProductManager = () => {
                                     </tr>
                                 ))}
                             </>)}
-
                         </tbody>
                     </table>
                 </div>

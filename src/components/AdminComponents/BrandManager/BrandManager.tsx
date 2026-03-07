@@ -2,8 +2,9 @@ import React, { useEffect, useState, type SyntheticEvent } from 'react';
 import '../../AdminComponents/ManagerLayout.css'
 import { BrandFormFields } from '../FormFields/BrandFormFields';
 import { ModalForm } from '../ModalForm/ModalForm';
-import type { Brand, CreateBrand } from '../../../types/Brand';
+import type { Brand, BrandErrors, CreateBrand } from '../../../types/Brand';
 import { createBrand, deleteBrand, getBrands, updateBrandById } from '../../../services/brands';
+import { validateBrands } from '../../../utils/validateBrands';
 
 export const BrandManager = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -11,7 +12,7 @@ export const BrandManager = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [newBrand, setNewBrand] = useState<CreateBrand>({ name: "" });
     const [editingId, setEditingId] = useState<number | null>(null);
-
+    const [errors, setErrors] = useState<BrandErrors>({ name: "" });
     //const toggleModal = (): void => {
     //    console.log("boton clickeado");
     //    setIsModalOpen(!isModalOpen);
@@ -34,6 +35,14 @@ export const BrandManager = () => {
 
     const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
+        setErrors({ name: "" });
+        const newErrors: BrandErrors = validateBrands(newBrand);
+        const hasErrors = Object.values(newErrors).some(error => error !== "")
+        if (hasErrors) {
+            setErrors(newErrors);
+            setLoading(false);
+            return;
+        }
         try {
             if (editingId !== null) {
                 await updateBrandById(editingId, newBrand.name);
@@ -43,6 +52,7 @@ export const BrandManager = () => {
             }
             const data = await getBrands();
             setBrands(data);
+            setErrors({ name: "" });
             setNewBrand({ name: "" });
             setEditingId(null);
             setIsModalOpen(false);
@@ -89,14 +99,15 @@ export const BrandManager = () => {
                 closeModal={() => closeModal()}
                 action={editingId !== null ? "Editar" : "Añadir"} entity="marca"
                 handleSubmit={handleSubmit}
-                children={<BrandFormFields handleChange={handleChange} value={newBrand.name} />}
+                children={<BrandFormFields handleChange={handleChange} value={newBrand.name} errors={errors} />}
             />
             <div className='page'>
                 <div className='page-header'>
-                    <h2>Marcas</h2>
+                    <h4 className='page-header-title'>Marcas</h4>
                     <button onClick={() => {
                         openModal();
                         setEditingId(null);
+                        setErrors({ name: "" });
                     }} className='add-btn'>
                         + Añadir marca
                     </button>
