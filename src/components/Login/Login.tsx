@@ -1,32 +1,59 @@
 import React, { useState } from "react";
 import './Login.css'
+import { useNavigate, type NavigateFunction } from "react-router-dom";
+import { supabase } from "../../supabase-client";
 type User = {
-    name: string;
+    email: string;
     password: string;
 }
 
 export const Login = () => {
     const [userForm, setUserForm] = useState<User>({
-        name: "",
+        email: "",
         password: ""
     });
+
+    const navigate: NavigateFunction = useNavigate();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setUserForm({ ...userForm, [name]: value });
     };
 
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const { error } = await supabase.auth.signInWithPassword({
+            email: userForm.email,
+            password: userForm.password
+        })
+
+        if (error) {
+            alert("Credenciales incorrectas.")
+            setUserForm({
+                email: "",
+                password: ""
+            });
+        } else{
+            navigate("/admin/alta-productos");
+        }
+
+    }
+
     return (
         <section className="login-container">
             <h4>Panel administrador</h4>
             <h6>Login</h6>
-            <form className="login-form" >
+            <form
+                className="login-form"
+                onSubmit={handleSubmit}
+            >
                 <div className="login-form-field">
                     <label className="login-form-label">USUARIO</label>
                     <input
                         className="login-form-input"
                         type="text"
-                        name="name"
+                        name="email"
+                        value={userForm.email}
                         onChange={handleChange}
                         placeholder="Ingrese su usuario"
                     />
@@ -37,6 +64,7 @@ export const Login = () => {
                         className="login-form-input"
                         type="password"
                         name="password"
+                        value={userForm.password}
                         onChange={handleChange}
                         placeholder="Ingrese su contraseña"
                     />
