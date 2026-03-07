@@ -11,7 +11,7 @@ type BrandFormFieldsProps = {
 export const BrandFormFields = ({ handleChange, value, errors }: BrandFormFieldsProps) => {
 
     return <>
-        <label>NOMBRE DE LA MARCA</label>
+        <label className='lbl'>NOMBRE</label>
         <input onChange={handleChange} name='name' value={value} className='input' type="text" placeholder={"Ej: Samsung, Apple"} />
         {errors.name && <p className='error'>{errors.name}</p>}
     </>

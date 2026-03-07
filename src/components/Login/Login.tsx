@@ -1,38 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './Login.css'
 import { Navigate, useNavigate, type NavigateFunction } from "react-router-dom";
-import { supabase } from "../../supabase-client";
-type User = {
+import { useAuthContext } from "../../context/AuthContext/useAuthContext";
+type LoginForm = {
     email: string;
     password: string;
 }
 
 export const Login = () => {
-    const [user, setUser] = useState<any>(null);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [userForm, setUserForm] = useState<User>({
+    const { user, loading, login } = useAuthContext();
+    const [userForm, setUserForm] = useState<LoginForm>({
         email: "",
         password: ""
     });
 
-    useEffect(() => {
-        const checkUser = async () => {
-            const { data } = await supabase.auth.getUser();
-            setUser(data.user);
-            setLoading(false);
-        }
-        checkUser();
-    }, [])
-
-
     const navigate: NavigateFunction = useNavigate();
 
-    if(loading){
+    if (loading) {
         return null;
     }
 
-    if (user) {
-        return <Navigate to={"/admin/alta-productos"} />
+    if (user!==null) {
+        return <Navigate to={"/admin/panel"} />
     }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -41,19 +30,16 @@ export const Login = () => {
 
     const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const { error } = await supabase.auth.signInWithPassword({
-            email: userForm.email,
-            password: userForm.password
-        })
-
-        if (error) {
+        try {
+            await login(userForm.email, userForm.password)
+            navigate("/admin/panel");
+        } catch (error) {
+            console.log(error);
             alert("Credenciales incorrectas.")
             setUserForm({
                 email: "",
                 password: ""
             });
-        } else {
-            navigate("/admin/alta-productos");
         }
 
     }

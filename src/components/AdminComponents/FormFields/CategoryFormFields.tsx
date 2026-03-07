@@ -10,7 +10,7 @@ type CategoryFormFieldsProps = {
 export const CategoryFormFields = ({handleChange, value, errors}:CategoryFormFieldsProps) => {
 
     return <>
-        <label>NOMBRE DE LA CATEGORIA</label>
+        <label className='lbl'>NOMBRE</label>
         <input name='name' value={value} onChange={handleChange} className='input' type="text" placeholder={"Ej: Smartphone, Tablet"} />
         {errors.name && <p className='error'>{errors.name}</p>}
     </>

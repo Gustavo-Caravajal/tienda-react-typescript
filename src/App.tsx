@@ -8,32 +8,31 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { FilterProvider } from './context/FilterContext/FilterProvider'
 import { CartProvider } from './context/CartContext/CartProvider'
 import { Cart } from './components/Cart/Cart'
-import { BrandManager } from './components/AdminComponents/BrandManager/BrandManager'
-import { CategoryManager } from './components/AdminComponents/CategoryManager/CategoryManager'
 import { AdminPanelNav } from './components/AdminComponents/AdminPanelNav/AdminPanelNav'
 import { Login } from './components/Login/Login'
+import { AuthProvider } from './context/AuthContext/AuthProvider'
 
 function App() {
 
   return (
     <>
       <BrowserRouter >
-        <CartProvider>
-          {/*<Header />*/}
-          <ProductsProvider>
-            <Routes>
-              <Route path={`/`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
-              <Route path={`/category/:category`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
-              <Route path={`/detail/:id`} element={<ItemDetailContainer />} />
-              <Route path='/carrito' element={<Cart />} />
-              <Route path='/brand' element={<BrandManager />} />
-              <Route path='/category' element={<CategoryManager />} />
-              <Route path='/product' element={<AdminPanelNav/>} />
-              <Route path='/login' element={<Login/>}/>
-            </Routes>
-          </ProductsProvider>
-          <Footer />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            {/*<Header />*/}
+            <ProductsProvider>
+              <Routes>
+                <Route path={`/`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
+                <Route path={`/category/:category`} element={<FilterProvider><ItemListContainer titulo={"Productos"} /></FilterProvider>} />
+                <Route path={`/detail/:id`} element={<ItemDetailContainer />} />
+                <Route path='/carrito' element={<Cart />} />
+                <Route path='/admin/panel' element={<AdminPanelNav />} />
+                <Route path='/admin' element={<Login />} />
+              </Routes>
+            </ProductsProvider>
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </BrowserRouter>
     </>
   )

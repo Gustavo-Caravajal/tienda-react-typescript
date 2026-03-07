@@ -65,3 +65,16 @@
     color: white;
     border: none;
 }
+
+.logout{
+    padding: 0.125rem 0.5rem;
+    border-radius: 12px;
+    background-color: rgb(255, 46, 46);
+    color: black;
+    font-size: small;
+    border: 1px solid black;
+}
+
+.logout:hover{
+    opacity: 0.5;
+}
