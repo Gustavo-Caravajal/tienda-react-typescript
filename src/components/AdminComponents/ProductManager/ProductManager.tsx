@@ -80,7 +80,7 @@ export const ProductManager = () => {
             description: "",
             file: ""
         });
-        const newErrors: ProductErrors = validateProducts(newProduct);
+        const newErrors: ProductErrors = validateProducts(newProduct, productImage);
         const hasErrors: boolean = Object.values(newErrors).some(error => error !== "");
         if (hasErrors) {
             setErrors(newErrors);

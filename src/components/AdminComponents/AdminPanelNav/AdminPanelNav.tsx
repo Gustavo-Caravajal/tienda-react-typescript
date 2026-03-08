@@ -1,24 +1,11 @@
-import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import './AdminPanelNav.css'
-import { ProductManager } from '../ProductManager/ProductManager'
-import { BrandManager } from '../BrandManager/BrandManager'
-import { CategoryManager } from '../CategoryManager/CategoryManager'
-import { useAuthContext } from '../../../context/AuthContext/useAuthContext'
-import { useNavigate } from 'react-router-dom'
 
-type Options = {
-    option: "product" | "brand" | "category"
+type AdminPanelNavProps = {
+    handleLogout: () => Promise<void>;
 }
 
-export const AdminPanelNav = () => {
-    const [option, setOption] = useState<Options>({ option: "product" });
-    const { logout } = useAuthContext();
-    const navigate = useNavigate();
-
-    const handleLogout = async () => {
-        await logout();
-        navigate("/admin");
-    }
+export const AdminPanelNav = ({ handleLogout }: AdminPanelNavProps) => {
     return (
         <>
             <nav className="admin-panel-nav">
@@ -30,13 +17,27 @@ export const AdminPanelNav = () => {
                 </div>
             </nav>
             <div className='admin-panel-options'>
-                <button onClick={() => { setOption({ option: "product" }) }} className={`${!(option.option === "product") ? "admin-panel-option" : "admin-panel-option active"}`}>Productos</button>
-                <button onClick={() => { setOption({ option: "brand" }) }} className={`${!(option.option === "brand") ? "admin-panel-option" : "admin-panel-option active"}`}>Marcas</button>
-                <button onClick={() => { setOption({ option: "category" }) }} className={`${!(option.option === "category") ? "admin-panel-option" : "admin-panel-option active"}`}>Categorias</button>
+                <NavLink
+                    to="/admin/panel/products"
+                    className={({ isActive }) => `admin-panel-option ${isActive ? "active" : ""}`}
+                >
+                    Productos
+                </NavLink>
+
+                <NavLink
+                    to="/admin/panel/brands"
+                    className={({ isActive }) => `admin-panel-option ${isActive ? "active" : ""}`}
+                >
+                    Marcas
+                </NavLink>
+
+                <NavLink
+                    to="/admin/panel/categories"
+                    className={({ isActive }) => `admin-panel-option ${isActive ? "active" : ""}`}
+                >
+                    Categorías
+                </NavLink>
             </div>
-            {option.option === "product" && <ProductManager />}
-            {option.option === "brand" && <BrandManager />}
-            {option.option === "category" && <CategoryManager />}
 
         </>
     )

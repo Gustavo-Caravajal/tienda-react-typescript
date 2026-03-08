@@ -21,8 +21,9 @@ export const Login = () => {
     }
 
     if (user!==null) {
-        return <Navigate to={"/admin/panel"} />
+        return <Navigate to={"/admin/panel/products"} replace />
     }
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setUserForm({ ...userForm, [name]: value });
@@ -32,7 +33,7 @@ export const Login = () => {
         e.preventDefault();
         try {
             await login(userForm.email, userForm.password)
-            navigate("/admin/panel");
+            navigate("/admin/panel/products");
         } catch (error) {
             console.log(error);
             alert("Credenciales incorrectas.")

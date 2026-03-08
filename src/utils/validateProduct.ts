@@ -1,6 +1,6 @@
 import type { CreateProduct, ProductErrors } from "../types/Product"
 
-export const validateProducts = (product: CreateProduct, fileRequired = true) => {
+export const validateProducts = (product: CreateProduct, file: File | null, fileRequired = true) => {
     const productErrors: ProductErrors = {
         name: "",
         brand: "",
@@ -35,11 +35,9 @@ export const validateProducts = (product: CreateProduct, fileRequired = true) =>
         productErrors.description = "La descripcion es obligatoria";
     }    
 
-    if (fileRequired && !product.image_url?.trim()) {
+    if (fileRequired && !file && !product.image_url.trim()) {
         productErrors.file = "Debes seleccionar una imagen";
     }
 
     return productErrors;
-
-
 }

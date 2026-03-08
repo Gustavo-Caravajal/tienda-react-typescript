@@ -52,6 +52,7 @@
     border: 1px solid transparent;
     border-radius: 7px;
     cursor: pointer;
+    text-decoration: none;
 
 }
 
@@ -61,6 +62,7 @@
 }
 
 .admin-panel-option.active{
+    text-decoration: none;
     background-color: black;
     color: white;
     border: none;
