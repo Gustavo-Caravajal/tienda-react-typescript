@@ -1,73 +1,217 @@
-# React + TypeScript + Vite
+# Tienda Online – React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web de **e-commerce** desarrollada con **React + TypeScript** que permite visualizar productos, filtrarlos por categoría y marca, agregarlos al carrito y realizar una compra simulada.
 
-Currently, two official plugins are available:
+El proyecto incluye además un **panel de administración** para gestionar productos, marcas y categorías conectado a **Supabase**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Repositorio:  
+https://github.com/Gustavo-Caravajal/tienda-react-typescript
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+## Frontend
+- React
+- TypeScript
+- CSS
+- React Router
+- Context API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Backend / Servicios
+- Supabase
+- Supabase Auth
+- Supabase Storage (para imágenes)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Librerías
+- React Bootstrap
+- MathJS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usuario
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Visualización de productos
+- Filtro por:
+  - categoría
+  - marca
+  - rango de precio
+- Vista de detalle del producto
+- Carrito de compras
+- Agregar productos con cantidad
+- Eliminación de productos del carrito
+- Cálculo automático de totales
+- Checkout simulado
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Panel de Administración
+
+El panel permite administrar el contenido de la tienda.
+
+### Gestión de Productos
+- Crear productos
+- Editar productos
+- Eliminar productos
+- Subir imágenes
+
+### Gestión de Marcas
+- Crear marcas
+- Editar marcas
+- Eliminar marcas
+
+### Gestión de Categorías
+- Crear categorías
+- Editar categorías
+- Eliminar categorías
+
+ El acceso al panel está protegido mediante **autenticación con Supabase**.
+
+---
+
+# Responsive Design
+
+La tienda está diseñada para funcionar correctamente en:
+
+- Mobile
+- Tablet
+- Desktop
+
+**El panel de administración está optimizado solo para PC** y no fue diseñado para dispositivos móviles.
+
+---
+
+# Arquitectura del Proyecto
+
+El proyecto utiliza una arquitectura basada en **Context API** para manejar los estados globales.
+
+## Contextos principales
+
+### AuthContext
+Gestiona:
+- autenticación
+- login
+- logout
+- usuario actual
+
+### ProductsContext
+Encargado de:
+- obtener productos desde Supabase
+- almacenar los productos globalmente
+
+### CartContext
+Gestiona:
+- productos en el carrito
+- cantidades
+- totales
+- checkout
+
+### FilterContext
+Maneja:
+- filtros de marcas
+- filtro de precio
+- productos visibles
+
+---
+
+# Estructura del Proyecto
+
+src
+│
+├── components
+│ ├── AdminComponents
+│ ├── Cart
+│ ├── Detail
+│ ├── FilterSidebar
+│ ├── Header
+│ ├── Footer
+│ ├── Item
+│ ├── ItemDetail
+│ ├── ItemList
+│ └── Login
+│
+├── context
+│ ├── AuthContext
+│ ├── CartContext
+│ ├── FilterContext
+│ └── ProductsContext
+│
+├── layouts
+│ ├── AdminLayout
+│ └── MainLayout
+│
+├── services
+│ ├── brands
+│ ├── categories
+│ ├── products
+│ └── uploadImage
+│
+├── types
+│
+├── utils
+│ └── validations
+│
+└── App.tsx
+
+
+---
+
+# Rutas principales
+
+## Tienda
+
+/ -> lista de productos
+/category/:category -> productos por categoría
+/detail/:id -> detalle del producto
+/carrito -> carrito de compras
+
+
+## Panel de Administración
+
+/admin -> login
+/admin/panel/products -> gestionar productos
+/admin/panel/brands -> gestionar marcas
+/admin/panel/categories -> gestionar categorías
+
+---
+
+# Base de Datos (Supabase)
+
+El proyecto utiliza las siguientes tablas:
+
+### products
+
+id
+name
+brand_id
+category_id
+price
+description
+image_url
+stock
+created_at
+
+
+### brands
+
+id
+name
+created_at
+
+
+### categories
+
+id
+name
+created_at
+
+
+---
+
+# Instalación
+
+## Clonar el repositorio
+
+git clone https://github.com/Gustavo-Caravajal/tienda-react-typescript.git

@@ -13,7 +13,7 @@ export const AdminPanelNav = ({ handleLogout }: AdminPanelNavProps) => {
                 <div className='nav-info'>
                     <h4 className='nav-title'>Panel de administración</h4>
                     <span className='user-type'>ADMIN</span>
-                    <button className='logout' onClick={handleLogout}>Logout</button>
+                    <button className='logout' onClick={handleLogout}>CERRAR SESIÓN</button>
                 </div>
             </nav>
             <div className='admin-panel-options'>
