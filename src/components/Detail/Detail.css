@@ -71,6 +71,9 @@ h2.title,
     .detail-image {
         width: 275px;
         height: 300px;
+    }
 
+    .detail-image:hover {
+        transform: none;
     }
 }

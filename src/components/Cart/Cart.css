@@ -45,7 +45,7 @@ img.delete-icon {
     object-fit: cover;
 }
 
-h4.product-text{
+h4.product-text {
     font-size: medium;
     font-weight: bold;
 }
@@ -72,13 +72,13 @@ p.product {
     width: 20%;
 }
 
-.product-img {
-    width: 5rem;
-    height: 5rem;
+.cart-product-img {
+    width: 4rem;
+    height: 4rem;
     object-fit: cover;
 }
 
-.cart-summary{
+.cart-summary {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,7 +131,12 @@ p.product {
         gap: 0.5rem;
     }
 
-    
+    .cart-product-img {
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+    }
+
     .cart-item {
         flex-direction: column;
         align-items: center;

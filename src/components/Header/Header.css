@@ -70,7 +70,7 @@ header {
     .header {
         background-color: rgb(224, 224, 224);
         align-items: flex-end;
-        padding-bottom: 1rem;
+        padding-bottom: 1rem;        
     }
 
     .header.closed{
@@ -100,9 +100,10 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem 1.5rem 0 1.5rem;
+        padding: 1rem 1.5rem 0 0;
         min-width: 90%;        
     }
+
 
     .hamburger-btn {
         display: flex;

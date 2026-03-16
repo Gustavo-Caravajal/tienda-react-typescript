@@ -13,12 +13,12 @@ nav {
     margin: 1rem 0 0 0;
 }
 
-.link {
+.nav-link {
     text-decoration: none;
     color: black;
 }
 
-.link:hover {
+.nav-link:hover {
     border-bottom: 2px solid black;
 
 }
@@ -42,10 +42,10 @@ nav {
 }
 
 @media (max-width: 768px) {
-    nav{
+    nav {
         margin-bottom: 1rem;
     }
-    
+
     .nav-items {
         display: flex;
         flex-direction: column;
@@ -84,5 +84,11 @@ nav {
     .cart {
         width: 1.5rem;
         height: 1.5rem;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: rgb(46, 46, 46);
+        font-weight: 500;
     }
 }

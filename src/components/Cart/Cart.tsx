@@ -19,7 +19,7 @@ export const Cart = () => {
                         <div className="cart-item">
                             <div className='product'>
                                 <img
-                                    className="product-img"
+                                    className="cart-product-img"
                                     src={item.image_url}
                                     alt={item.name}
                                 />
@@ -32,7 +32,7 @@ export const Cart = () => {
                             <p className='total-text'>${totalItemPrice(item)}</p>
                             <img
                                 className="delete-icon"
-                                src="../../../public/icons/eliminar.png"
+                                src="/icons/eliminar.png"
                                 alt="Eliminar producto"
                                 onClick={() => { deleteItem(item.id) }}
                             />

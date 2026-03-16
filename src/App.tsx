@@ -14,6 +14,7 @@ import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
 import { ProductManager } from './components/AdminComponents/ProductManager/ProductManager'
 import { BrandManager } from './components/AdminComponents/BrandManager/BrandManager'
 import { CategoryManager } from './components/AdminComponents/CategoryManager/CategoryManager'
+import { ScrollToTop } from './components/ScrollToTop/ScrollToTop'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <AuthProvider>
           <CartProvider>
             <ProductsProvider>
-
+              <ScrollToTop/>
               <Routes>
                 <Route element={<MainLayout />}>
                   <Route

@@ -14,7 +14,7 @@ export const Nav = ({show, toggleMenu}: navProps) => {
         <nav>
             <ul className={`nav-items ${show ? "open" : ""}`}>
                 <li className='nav-item menu-item second' onClick={() => toggleMenu()}>
-                    <Link className='link' to={"/"}>Inicio</Link>
+                    <Link className='nav-link' to={"/"}>Inicio</Link>
                 </li>
                 <li className='nav-item menu-item first' onClick={() => toggleMenu()}>
                     <Link className='link-cart' to={"/carrito"}>
