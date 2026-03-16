@@ -23,12 +23,12 @@
 .items {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 2rem;
-    width: 60%;
+    width: 70%;
     gap: 1rem;
 }
 
