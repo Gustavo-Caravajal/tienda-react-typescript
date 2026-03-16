@@ -4,6 +4,10 @@ Aplicación web de **e-commerce** desarrollada con **React + TypeScript** que pe
 
 El proyecto incluye además un **panel de administración** para gestionar productos, marcas y categorías conectado a **Supabase**.
 
+## Demo
+
+https://tienda-react-typescript-dev.vercel.app/
+
 ---
 
 # Tecnologías utilizadas
