@@ -4,9 +4,6 @@ Aplicación web de **e-commerce** desarrollada con **React + TypeScript** que pe
 
 El proyecto incluye además un **panel de administración** para gestionar productos, marcas y categorías conectado a **Supabase**.
 
-Repositorio:  
-https://github.com/Gustavo-Caravajal/tienda-react-typescript
-
 ---
 
 # Tecnologías utilizadas
@@ -117,7 +114,7 @@ Maneja:
 ---
 
 # Estructura del Proyecto
-
+```
 src
 │
 ├── components
@@ -154,7 +151,7 @@ src
 │ └── validations
 │
 └── App.tsx
-
+```
 
 ---
 
