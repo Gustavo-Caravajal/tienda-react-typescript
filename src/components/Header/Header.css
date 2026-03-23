@@ -68,7 +68,7 @@ header {
 
 @media (max-width: 768px) {
     .header {
-        background-color: rgb(224, 224, 224);
+        background-color: rgb(238, 238, 238);
         align-items: flex-end;
         padding-bottom: 1rem;        
     }
@@ -76,6 +76,7 @@ header {
     .header.closed{
         background-color: transparent;
         padding-bottom: 0;
+        height: auto;
     }
     .category-list {
         display: flex;
@@ -142,6 +143,6 @@ header {
 
  
     .header{
-        transition: background-color 0.3s ease;
+        transition: background-color 0.2s ease-in;
     }
 }
