@@ -18,6 +18,10 @@ export const HeroContainer = () => {
     
     return (<div className="hero-container">
         <h3>Últimos ingresos</h3>
-        <Hero list={data}/> 
+        {loading ? (
+            <p>Cargando...</p>
+        ) : (
+            <Hero list={data}/> 
+        )}        
     </div>)
 }
