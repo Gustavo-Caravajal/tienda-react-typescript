@@ -14,14 +14,18 @@ export const HeroContainer = () => {
             setLoading(false)
         };
         fetchProducts();
-    },[])
-    
+    }, [])
+
     return (<div className="hero-container">
         <h3>Últimos ingresos</h3>
         {loading ? (
-            <p>Cargando...</p>
+            <div className="loading-message">
+                <p>Cargando...</p>
+            </div>
         ) : (
-            <Hero list={data}/> 
-        )}        
+            <div className="hero">
+                <Hero list={data} />
+            </div>
+        )}
     </div>)
 }

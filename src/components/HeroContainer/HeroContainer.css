@@ -4,9 +4,17 @@ div.hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: white;
     gap: 0.5rem;
-    padding-top: 2rem;
     border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+div.hero,
+div.loading-message{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
