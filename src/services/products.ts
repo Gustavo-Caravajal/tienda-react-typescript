@@ -21,6 +21,31 @@ export const getProducts = async (): Promise<ProductWithRelations[]> => {
     return data ?? [];
 }
 
+export const getLastProducts = async (): Promise<ProductWithRelations[]> => {
+    const { data, error } = await supabase
+        .from('products')
+        .select(`
+            *,
+            brand:brands(*),
+            category:categories(*)
+        `)
+        .order(
+            "created_at",
+            { ascending: false }
+        )
+        .order(
+            "id",
+            { ascending: false}
+        )
+        .limit(10);
+
+    if (error) {
+        throw new Error(`Error getting products: ${error.message}`);
+    }
+
+    return data ?? [];
+}
+
 export const createProduct = async (product: Omit<Product, "id">): Promise<Product> => {
     const { data, error } = await supabase
         .from("products")

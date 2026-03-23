@@ -3,6 +3,7 @@ import { ItemList } from "../ItemList/ItemList"
 import { FilterSidebar } from '../FilterSidebar/FilterSidebar'
 import { useParams } from 'react-router-dom'
 import { useFilterContext } from '../../context/FilterContext/useFilterContext'
+import { HeroContainer } from '../HeroContainer/HeroContainer'
 
 type ItemListContainerProps = {
     titulo: string
@@ -11,9 +12,13 @@ type ItemListContainerProps = {
 export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
     const { category } = useParams<{ category: string }>()
     const { loading, visibleProducts } = useFilterContext();
-    
-    return (
+
+    return (<>
+        {!category?.trim() &&
+            <HeroContainer />
+        }
         <div className="item-list-container">
+
             <h1>{titulo}</h1>
             {loading ? (
                 <p className='mensaje'>Cargando productos</p>
@@ -35,5 +40,6 @@ export const ItemListContainer = ({ titulo }: ItemListContainerProps) => {
                 </div>
             </div>
         </div>
+    </>
     )
 }
