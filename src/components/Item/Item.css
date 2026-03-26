@@ -1,10 +1,10 @@
-.product-card{
+.product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 12rem;
-    min-height: 16rem;
+    min-height: 283.56px;
     border: 2px solid rgb(206, 206, 206);
     padding: 1rem 1rem;
     border-radius: 7.5px;
@@ -12,11 +12,11 @@
     gap: 0.25rem;
 }
 
-.product-card:hover{
+.product-card:hover {
     transform: scale(1.04);
 }
 
-.product-image{
+.product-image {
     width: 160px;
     height: 160px;
     margin-bottom: auto;
@@ -24,9 +24,16 @@
 }
 
 .price,
-.item-title{
+.item-title {
     color: black;
     font-size: medium;
     text-align: center;
+}
+
+.item-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
 }

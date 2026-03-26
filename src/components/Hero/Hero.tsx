@@ -21,7 +21,9 @@ export const Hero = ({ list }: HeroProps) => {
                 <Carousel.Item key={item.id}>
                     <div className="carousel-center">
                         <Link to={`/detail/${item.id}`}>
-                            <img className="carousel-img" src={item.image_url} alt={item.description} />
+                            <div className="carousel-img-container">
+                                <img className="carousel-img" src={item.image_url} alt={item.description} />
+                            </div>
                         </Link>
                     </div>
                 </Carousel.Item>
