@@ -134,7 +134,7 @@ p.product {
     .cart-product-img {
         width: 10rem;
         height: 10rem;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     .cart-item {

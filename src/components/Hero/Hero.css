@@ -8,6 +8,7 @@
   border-radius: 50%;
   border: 2px solid rgb(255, 115, 0);
   background-color: rgb(255, 255, 255);
+  object-fit: contain;
 }
 
 .carousel-img {

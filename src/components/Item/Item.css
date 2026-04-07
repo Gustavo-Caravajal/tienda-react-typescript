@@ -20,7 +20,7 @@
     width: 160px;
     height: 160px;
     margin-bottom: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .price,
